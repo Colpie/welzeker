@@ -5,6 +5,14 @@
     margin-top: -30px;
     z-index: 99999;
 
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+
+    @media (max-width: 1024px) {
+      margin-top: 60px;
+      height: auto;
+    }
+
     .fusion-builder-row {
       max-width: 1350px !important;
 
@@ -12,7 +20,10 @@
         height: 100%;
 
         .fusion-column-wrapper {
-          padding-left: 75px;
+
+          @media (min-width: 1025px) {
+            padding-left: 75px;
+          }
 
           .fusion-image-element {
             height: 100%;
@@ -26,6 +37,8 @@
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
+
+                border-radius: 0 0 120px 0;
               }
             }
           }

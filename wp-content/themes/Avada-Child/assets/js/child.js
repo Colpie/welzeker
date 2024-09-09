@@ -42,6 +42,8 @@
             $('.fusion-flyout-menu .fusion-menu').toggleClass('fly');
             $('.custom-caret').remove();
 
+            $('.side-menu').toggleClass('no-z');
+
             if ($('.fusion-mobile-nav-holder li').hasClass('menu-item-has-children')) {
                 $('.fusion-flyout-menu .fusion-menu .menu-item-has-children a').append('<span class="fusion-caret custom-caret"><i class="fusion-dropdown-indicator" aria-hidden="true"></i></span>');
                 $('.fusion-flyout-menu .fusion-menu .menu-item-has-children a .custom-caret').on('click', function (e) {

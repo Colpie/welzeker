@@ -19,7 +19,7 @@ $c_page_id = Avada()->fusion_library->get_page_id();
 
 	<div class="custom-footer">
 		<div class="fusion-row">
-			 <div class="col-lg-7 footer-column footer-left-column">
+			 <div class="col-lg-7 col-md-12 col-12 footer-column footer-left-column">
                  <div class="footer-inner-column">
                      <img src="/wp-content/themes/Avada-Child/assets/images/logos/crelan.png">
                      <img src="/wp-content/themes/Avada-Child/assets/images/logos/je_makelaar.png">
@@ -27,7 +27,7 @@ $c_page_id = Avada()->fusion_library->get_page_id();
                      <img src="/wp-content/themes/Avada-Child/assets/images/logos/aq.png">
                  </div>
              </div>
-			 <div class="col-lg-5 footer-column footer-right-column">
+			 <div class="col-lg-5 col-md-9 col-9 footer-column footer-right-column">
                  <div class="footer-inner-column">
                      <?php
                         $footer_menu = wp_nav_menu(array('menu' => 'footer-menu'));

@@ -7,9 +7,20 @@
 
     z-index: 999999;
 
+    &.no-z {
+      z-index: 99;
+
+    }
+
     .side-menu-wrapper {
       position: relative;
       padding: 30px;
+      background: $white;
+
+      @media (max-width: 1024px) {
+        padding: 30px 15px;
+        border-radius: 30px 0 0 30px;
+      }
 
       .side-menu-content {
         display: flex;
@@ -31,6 +42,11 @@
               width: 40px;
               height: 40px;
               object-fit: contain;
+
+              @media (max-width: 1024px) {
+                height: 25px;
+                width: 25px;
+              }
             }
           }
         }
