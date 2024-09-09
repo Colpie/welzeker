@@ -1,0 +1,36 @@
+#boxed-wrapper {
+
+  .banner-row {
+    height: 400px;
+    margin-top: -30px;
+    z-index: 99999;
+
+    .fusion-builder-row {
+      max-width: 1350px !important;
+
+      .fusion-layout-column {
+        height: 100%;
+
+        .fusion-column-wrapper {
+          padding-left: 75px;
+
+          .fusion-image-element {
+            height: 100%;
+
+            .fusion-imageframe {
+              height: 100%;
+              width: 100%;
+              border-radius: 0 0 120px 0;
+
+              img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

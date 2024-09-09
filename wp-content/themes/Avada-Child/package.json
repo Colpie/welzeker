@@ -1,0 +1,28 @@
+{
+  "name": "Avada-Child",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^4.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch-sass": "^1.4.1",
+    "sass": "^1.62.1"
+  },
+  "dependencies": {
+    "gulp-util": "^3.0.0",
+    "natives": "^1.1.6",
+    "node-sass": "^9.0.0"
+  }
+}

@@ -1,0 +1,48 @@
+// Theme fixes
+
+
+#boxed-wrapper {
+  #main {
+
+    .title-sep-container {
+      display: none !important;
+    }
+  }
+
+  .static-row {
+
+    .fusion-builder-row {
+      position: static !important;
+    }
+  }
+
+  .static-image-column {
+    position: absolute;
+    right: 0;
+    top: -60px;
+
+    width: 45%;
+    height: calc(100% + 60px);
+
+    .fusion-column-wrapper {
+      height: 100%;
+
+      .fusion-image-element {
+        height: 100%;
+
+        .fusion-imageframe {
+          height: 100%;
+          width: 100%;
+
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+
+            border-radius: 120px 0 0 0;
+          }
+        }
+      }
+    }
+  }
+}

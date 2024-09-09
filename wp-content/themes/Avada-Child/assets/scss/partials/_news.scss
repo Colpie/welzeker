@@ -1,0 +1,46 @@
+#boxed-wrapper {
+
+  .latest-news-item {
+    padding-right: 30px !important;
+    margin-bottom: 45px;
+
+    .card {
+      border: 0 !important;
+      height: 100%;
+
+      a {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+
+        .card-block {
+          -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+
+          h3 {
+            margin: 0 0 10px 0 !important;
+          }
+        }
+
+        .card-footer {
+          border: 0 !important;
+          background: transparent !important;
+          padding: 0;
+
+          margin-top: 15px;
+
+          .fusion-button {
+            padding: 5px 15px !important;
+            background: $green !important;
+            font-weight: 500 !important;
+
+            border-radius: 24px !important;
+            color: $white !important;
+            text-transform: none !important;
+
+          }
+        }
+      }
+    }
+  }
+}

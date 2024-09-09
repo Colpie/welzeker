@@ -1,0 +1,40 @@
+#boxed-wrapper {
+
+  .side-menu {
+    position: fixed;
+    right: 0;
+    top: 150px;
+
+    z-index: 999999;
+
+    .side-menu-wrapper {
+      position: relative;
+      padding: 30px;
+
+      .side-menu-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .side-menu-content-item {
+
+          a {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            align-items: center;
+            color: $brown !important;
+            font-size: 14px !important;
+
+            img {
+              width: 40px;
+              height: 40px;
+              object-fit: contain;
+            }
+          }
+        }
+      }
+    }
+  }
+}

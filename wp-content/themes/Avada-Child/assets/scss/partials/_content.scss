@@ -1,0 +1,12 @@
+.image-cropper {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+div.image-cropper > img {
+  height: 100%;
+  object-fit: cover
+}

@@ -1,0 +1,10 @@
+wp-config.php
+wp-config-server.php
+wp-content/uploads
+wp-content/uploads/*
+.DS_Store
+wp-content/themes/crmart/library/.sass-cache/
+wp-content/themes/crmart/library/.sass-cache/*
+.htaccess
+.idea/
+searchreplacedb2.php

@@ -1,0 +1,43 @@
+#boxed-wrapper {
+
+  .custom-menu-row {
+    z-index: 999999;
+  }
+
+  .custom-main-menu {
+    padding: 0 30px;
+
+    .custom-main-menu-wrapper {
+      padding: 45px 60px;
+      background: $brown;
+      border-radius: 120px;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 45px;
+
+      .custom-menu-item {
+
+        a {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+
+          color: $white !important;
+          font-weight: 500 !important;
+          justify-content: center;
+
+          align-items: center;
+
+          img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+
+            min-width: 60px;
+          }
+        }
+      }
+    }
+  }
+}

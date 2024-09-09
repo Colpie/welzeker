@@ -1,0 +1,119 @@
+#boxed-wrapper {
+
+  .custom-footer {
+    padding: 0 15px;
+
+    .fusion-row {
+      max-width: 1380px;
+      display: flex;
+      flex-wrap: wrap;
+
+      .footer-column {
+        background: #F7F3F2;
+        padding: 45px 15px;
+        display: flex;
+
+        align-items: center;
+
+        &:before {
+          content: '';
+          background: #F7F3F2;
+          width: 500%;
+
+          height: 100%;
+          position: absolute;
+          right: 100%;
+
+          top: 0;
+        }
+
+        &.footer-right-column {
+          border-radius: 0 120px 0 0;
+          justify-content: flex-end;
+
+
+          &:before {
+            display: none;
+          }
+
+
+          .footer-inner-column {
+            gap: 0;
+            justify-content: flex-end;
+            padding-right: 60px;
+
+            ul {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+
+              display: flex;
+
+              li {
+
+                &:last-child {
+
+                  &:after {
+                    display: none;
+                  }
+                }
+
+                &:after {
+                  content: '|';
+                  display: inline-block;
+                  padding: 0 5px;
+
+                  color: $brown !important;
+                  font-size: 14px !important;
+
+                  @media (max-width: 767px) {
+                    display: none;
+                  }
+                }
+
+                a {
+                  font-size: 14px !important;
+                  color: $brown !important;
+                  position: relative;
+
+                  &:hover {
+
+                    &:before {
+                      width: 100%;
+                      left: 0;
+                    }
+                  }
+
+                  &:before {
+                    content: '';
+                    width: 0;
+                    height: 1px;
+
+                    background: $brown;
+                    position: absolute;
+                    right: 0;
+
+                    bottom: 0;
+                    transition: all .3s ease-in-out;
+                    -webkit-transition: all .3s ease-in-out;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .footer-inner-column {
+          display: flex;
+          gap: 15px;
+
+          img {
+            width: 200px;
+            height: 40px;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+}
