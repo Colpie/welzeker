@@ -17,7 +17,7 @@ body {
 
 #boxed-wrapper {
 
-  p {
+  p, th, td, li {
     -webkit-font-smoothing: antialiased !important;
     font-family: $font !important;
     font-size: 20px !important;

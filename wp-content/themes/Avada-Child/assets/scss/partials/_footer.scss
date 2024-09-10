@@ -21,6 +21,11 @@
 
         align-items: center;
 
+        @media (max-width: 1200px) {
+          padding-left: 30px;
+
+        }
+
         @media (max-width: 640px) {
           padding: 15px 30px;
         }
@@ -128,15 +133,21 @@
 
         .footer-inner-column {
           display: flex;
-          //gap: 15px;
+          gap: 45px;
+
+          @media (max-width: 640px) {
+            gap: 0;
+            width: 100%;
+            justify-content: space-between;
+          }
 
           img {
-            width: 180px;
+            //width: 180px;
             height: 40px;
             object-fit: contain;
 
             @media (max-width: 640px) {
-              width: 25%;
+              width: 20%;
             }
           }
         }
