@@ -3,7 +3,11 @@
   header {
 
     .fusion-header {
-      padding: 10px;
+      padding: 10px 0 0;
+
+      &.no-z {
+        z-index: 0 !important;
+      }
 
       .fusion-row {
         max-width: 1350px;
@@ -91,63 +95,92 @@
   }
 
   .fusion-menu-header {
-    position: fixed;
-    left: 0;
-    top: 32px;
+    position: relative;
 
-    width: 100%;
-    background: $brown;
+    &.sticky-header {
 
-    opacity: 0;
-    height: 0;
-    transition: all .3s ease-in-out;
+      @media (min-width: 1126px) {
+        position: fixed;
+        top: 0;
+        width: 100%;
 
-    -webkit-transition: all .3s ease-in-out;
-
-    &.sticky-active {
-      opacity: 1;
-      height: 50px;
+        .menu-row {
+          margin-top: 0;
+        }
+      }
     }
 
     .menu-row {
-      display: flex;
-      max-width: 1350px;
-      flex-wrap: wrap;
 
-      height: 100%;
-      align-items: center;
+      @media (min-width: 1126px) {
+        padding: 20px 75px;
+        background: $brown;
+        border-radius: 0 0 160px 160px;
 
-      .main-menu {
+        max-width: 1200px;
+        margin-top: -25px;
+      }
+
+      .fusion-main-menu {
         width: 100%;
-        display: flex;
-        justify-content: center;
 
-        @media (max-width: 1125px) {
-          justify-content: flex-end;
-          padding: 0 30px;
-        }
-
-        .fusion-main-menu {
-          float: none;
-          width: 100%;
-
-          ul {
-            display: flex;
-            justify-content: space-between;
-
-          }
+        ul {
+          display: flex;
+          justify-content: space-between;
 
           li {
-            padding-right: 0 !important;
-            text-align: center;
 
             a {
               height: auto !important;
               border: 0 !important;
               color: $white !important;
+
+              font-weight: 500 !important;
+
+              .menu-text {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                  width: 40px;
+                  height: 40px;
+                  min-width: 40px;
+
+                  object-fit: contain;
+                }
+              }
             }
           }
         }
+      }
+    }
+  }
+}
+
+.home {
+
+  #boxed-wrapper {
+
+    .fusion-menu-header {
+      display: none;
+      position: fixed;
+      //left: 50%;
+      //transform: translateX(-50%);
+
+      top: 0;
+      width: 100%;
+
+      &.sticky-active {
+        display: flex;
+      }
+
+      .menu-row {
+        margin-top: 0 !important;
       }
     }
   }

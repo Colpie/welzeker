@@ -7,9 +7,19 @@
             $(this).attr('title', $(this).data('title'));
         });
 
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 168) {
+                // Add the class when scrolled more than 168px
+                $('.fusion-menu-header').addClass('sticky-header fadeInDown animated');
+            } else {
+                // Remove the class if scrolled less than 168px
+                $('.fusion-menu-header').removeClass('sticky-header fadeInDown animated');
+            }
+        });
+
         function checkMenuPosition() {
-            var menu = $('.custom-menu-row');
-            var header = $('.fusion-menu-header');
+            var menu = $('.home .custom-menu-row');
+            var header = $('.home .fusion-menu-header');
 
             if (menu.length) {
                 var menuOffset = menu.offset().top; // Get the top position of the custom-menu-row
@@ -17,9 +27,9 @@
 
                 // If the user has scrolled past the top of custom-menu-row
                 if (windowScroll > menuOffset) {
-                    header.addClass('sticky-active'); // Add class when out of view
+                    header.addClass('sticky-active fadeInDown animated'); // Add class when out of view
                 } else {
-                    header.removeClass('sticky-active'); // Remove class when in view
+                    header.removeClass('sticky-active fadeInDown animated'); // Remove class when in view
                 }
             }
         }
@@ -43,6 +53,7 @@
             $('.custom-caret').remove();
 
             $('.side-menu').toggleClass('no-z');
+            $('.fusion-header').toggleClass('no-z');
 
             if ($('.fusion-mobile-nav-holder li').hasClass('menu-item-has-children')) {
                 $('.fusion-flyout-menu .fusion-menu .menu-item-has-children a').append('<span class="fusion-caret custom-caret"><i class="fusion-dropdown-indicator" aria-hidden="true"></i></span>');

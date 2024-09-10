@@ -5,6 +5,19 @@
     position: relative !important;
   }
 
+  .fusion-flyout-menu-icons {
+    float: left;
+
+    .fusion-flyout-menu-toggle {
+      background: $brown;
+      padding: 20px;
+      position: fixed;
+
+      right: 0;
+      top: 0;
+    }
+  }
+
   .fusion-header-has-flyout-menu .fusion-flyout-menu-icons .fusion-toggle-icon-line {
     background: $white !important;
   }
@@ -78,13 +91,30 @@
 
           width: 100%;
           justify-content: center;
-          text-transform: uppercase;
-
           position: relative;
+
 
           &:hover {
             text-decoration: none;
             color: $brown !important;
+          }
+
+          .menu-text {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+
+            img {
+              width: 40px;
+              height: 40px;
+              min-width: 40px;
+
+              object-fit: contain;
+            }
           }
         }
 
