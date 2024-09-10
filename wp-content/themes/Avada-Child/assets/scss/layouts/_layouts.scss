@@ -1,0 +1,38 @@
+#boxed-wrapper {
+
+  .brown-after {
+
+    .fusion-column-wrapper {
+      //position: relative;
+
+      &:after {
+        content: '';
+        background: $brown;
+        height: 100%;
+
+        width: 500%;
+        position: absolute;
+        left: calc(100% - 15px);
+
+        top: 0;
+      }
+    }
+
+    .cta-column {
+
+      .fusion-column-wrapper {
+
+        &:after {
+          display: none !important;
+        }
+      }
+    }
+  }
+
+  .brown-background-small {
+
+    @media (max-width: 640px) {
+      background: $brown !important;
+    }
+  }
+}

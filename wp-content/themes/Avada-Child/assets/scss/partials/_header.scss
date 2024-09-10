@@ -99,11 +99,11 @@
       left: 50%;
       transform: translateX(-50%);
 
-      width: calc(100% - 60px);
+      width: calc(100% - 45px);
     }
 
     @media (min-width: 1300px) {
-      padding-left: 60px;
+      padding-left: 45px;
       width: 100%;
     }
 

@@ -21,7 +21,11 @@
     .fusion-builder-row {
 
       @media (min-width: 1026px) {
-        padding-left: 75px !important;
+        padding-left: 55px !important;
+
+        &.fusion-builder-row-inner {
+          padding-left: 0 !important;
+        }
       }
     }
   }

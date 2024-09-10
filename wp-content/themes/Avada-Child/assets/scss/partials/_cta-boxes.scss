@@ -1,0 +1,33 @@
+#boxed-wrapper {
+
+  .cta-column {
+
+    @media (max-width: 1024px) {
+      width: 50% !important;
+    }
+
+    .fusion-column-wrapper {
+      padding: 15px;
+      border: 1px solid $white !important;
+      border-radius: 28px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .fusion-text {
+        text-align: center;
+
+        p {
+          color: $white !important;
+          font-size: 14px !important;
+          font-weight: 500 !important;
+
+          &:last-child {
+            margin-bottom: 0 !important;
+          }
+        }
+      }
+    }
+  }
+}
