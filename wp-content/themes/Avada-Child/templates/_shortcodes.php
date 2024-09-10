@@ -16,7 +16,7 @@ function print_menu_function()
                 </a>
             </div>
             <div class="custom-menu-item">
-                <a href="https://crelan.be" target="_blank">
+                <a href="<?php echo get_site_url(); ?>/bank-crelan">
                     <img src="/wp-content/themes/Avada-Child/assets/images/menu/icon_bank.png">
                     Bank crelan
                 </a>

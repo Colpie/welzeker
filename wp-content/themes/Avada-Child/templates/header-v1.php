@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
 ?>
 <div class="fusion-header">
     <div class="fusion-row">
-        <div class="col-lg-7 col-md-6 logo-section">
+        <div class="col-lg-7 col-md-6 col-12 p-0 logo-section">
             <?php avada_logo(); ?>
             <div class="socials">
                 <a href="<?php echo get_option('insusite_facebook') ?>" target="_blank">
@@ -30,7 +30,7 @@ if (!defined('ABSPATH')) {
                 </a>
             </div>
         </div>
-        <div class="col-lg-5 col-md-6 menu-section">
+        <div class="col-lg-5 col-md-6 col-12 p-0 menu-section">
             <?php echo do_shortcode('[print_openings]'); ?>
         </div>
     </div>

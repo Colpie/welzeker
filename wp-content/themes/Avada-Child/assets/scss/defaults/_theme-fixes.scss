@@ -16,6 +16,16 @@
     }
   }
 
+  .custom-row-width {
+
+    .fusion-builder-row {
+
+      @media (min-width: 1026px) {
+        padding-left: 75px !important;
+      }
+    }
+  }
+
   .static-image-column {
 
     @media (min-width: 1025px) {
