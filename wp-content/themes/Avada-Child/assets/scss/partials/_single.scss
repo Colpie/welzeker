@@ -1,0 +1,47 @@
+.single {
+
+  #boxed-wrapper {
+
+    #main {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .default-banner {
+      height: 400px;
+      z-index: 99999;
+      padding-right: 0 !important;
+
+      //padding-left: 75px !important;
+      //margin-top: -109px;
+
+      @media (max-width: 1024px) {
+        margin-top: 60px;
+        height: auto;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+
+        border-radius: 0 0 120px 0;
+        object-position: center center;
+      }
+    }
+
+    article {
+
+      @media (min-width: 1300px) {
+        padding-left: 60px;
+      }
+
+      .post-content {
+
+        //@media (min-width: 1300px) {
+        //  padding-left: 75px;
+        //}
+      }
+    }
+  }
+}

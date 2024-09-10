@@ -27,10 +27,6 @@
             justify-content: space-between;
           }
 
-          @media (max-width: 640px) {
-            //flex-direction: column;
-          }
-
           .fusion-logo {
             width: 300px;
 
@@ -41,10 +37,6 @@
 
           .socials {
             margin-top: 35px;
-
-            @media (max-width: 640px) {
-              //margin-top: 0;
-            }
 
             a {
               width: 45px;
@@ -100,7 +92,20 @@
   }
 
   .fusion-menu-header {
-    position: relative;
+    //position: relative;
+
+    @media (min-width: 1126px) {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: calc(100% - 60px);
+    }
+
+    @media (min-width: 1300px) {
+      padding-left: 60px;
+      width: 100%;
+    }
 
     &.sticky-header {
 
@@ -108,6 +113,9 @@
         position: fixed;
         top: 0;
         width: 100%;
+
+        left: auto;
+        transform: none;
 
         .menu-row {
           margin-top: 0;
@@ -117,16 +125,17 @@
 
     .menu-row {
 
-      @media (min-width: 1320px) {
-        margin-top: -25px;
+      @media (min-width: 1300px) {
+        max-width: 100%;
+        width: 1250px;
       }
 
       @media (min-width: 1126px) {
         padding: 20px 75px;
         background: $brown;
-        border-radius: 0 0 160px 160px;
+        border-radius: 0 0 140px 140px;
 
-        max-width: 1200px;
+        max-width: 1250px;
       }
 
       .fusion-main-menu {
