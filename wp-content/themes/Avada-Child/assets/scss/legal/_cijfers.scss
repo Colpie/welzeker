@@ -1,0 +1,58 @@
+#boxed-wrapper {
+  .cijfers-container {
+    margin-bottom: 30px !important;
+    display: block !important;
+
+    @media (max-width: 640px) {
+      margin-top: 30px !important;
+    }
+
+    .cijfers-category {
+      width: 100% !important;
+      display: flex;
+      flex-direction: column;
+
+      .insufeed-category-title,
+      .insufeed-category-link {
+        padding: 0 !important;
+
+        h2 {
+          font-size: 24px !important;
+          margin-bottom: 12px !important;
+        }
+      }
+
+      .insufeed-category-link {
+        text-align: left !important;
+        margin-bottom: 30px !important;
+
+        .fusion-button {
+          padding: 5px 15px !important;
+          font-size: 18px !important;
+        }
+      }
+    }
+
+    .cijfers-content-container {
+      margin-top: 30px !important;
+      padding: 0 !important;
+
+      ul {
+
+        li {
+          display: list-item !important;
+
+          ul {
+
+            li {
+
+              &:before {
+                display: none !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -6253,6 +6253,48 @@ body {
   background: rgba(129, 117, 115, 0.03) !important;
 }
 
+#boxed-wrapper .cijfers-container {
+  margin-bottom: 30px !important;
+  display: block !important;
+}
+@media (max-width: 640px) {
+  #boxed-wrapper .cijfers-container {
+    margin-top: 30px !important;
+  }
+}
+#boxed-wrapper .cijfers-container .cijfers-category {
+  width: 100% !important;
+  display: flex;
+  flex-direction: column;
+}
+#boxed-wrapper .cijfers-container .cijfers-category .insufeed-category-title,
+#boxed-wrapper .cijfers-container .cijfers-category .insufeed-category-link {
+  padding: 0 !important;
+}
+#boxed-wrapper .cijfers-container .cijfers-category .insufeed-category-title h2,
+#boxed-wrapper .cijfers-container .cijfers-category .insufeed-category-link h2 {
+  font-size: 24px !important;
+  margin-bottom: 12px !important;
+}
+#boxed-wrapper .cijfers-container .cijfers-category .insufeed-category-link {
+  text-align: left !important;
+  margin-bottom: 30px !important;
+}
+#boxed-wrapper .cijfers-container .cijfers-category .insufeed-category-link .fusion-button {
+  padding: 5px 15px !important;
+  font-size: 18px !important;
+}
+#boxed-wrapper .cijfers-container .cijfers-content-container {
+  margin-top: 30px !important;
+  padding: 0 !important;
+}
+#boxed-wrapper .cijfers-container .cijfers-content-container ul li {
+  display: list-item !important;
+}
+#boxed-wrapper .cijfers-container .cijfers-content-container ul li ul li:before {
+  display: none !important;
+}
+
 .cookie-popup {
   z-index: 9999 !important;
   max-width: 400px !important;
