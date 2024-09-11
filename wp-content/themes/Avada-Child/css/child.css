@@ -5787,7 +5787,7 @@ div.image-cropper > img {
 }
 @media (max-width: 500px) {
   #boxed-wrapper .panel-group .fusion-panel .panel-heading h4 a {
-    font-size: 80% !important;
+    font-size: 95% !important;
   }
 }
 #boxed-wrapper .panel-group .fusion-panel .panel-heading h4 a:before {
@@ -5891,7 +5891,7 @@ body {
 }
 @media (max-width: 500px) {
   #boxed-wrapper h1 {
-    font-size: 80% !important;
+    font-size: 90% !important;
   }
 }
 #boxed-wrapper h1 p {
@@ -5903,7 +5903,7 @@ body {
 }
 @media (max-width: 500px) {
   #boxed-wrapper h1 p {
-    font-size: 80% !important;
+    font-size: 90% !important;
   }
 }
 #boxed-wrapper h2 {
@@ -5913,22 +5913,12 @@ body {
   font-size: 42px !important;
   line-height: 1.2 !important;
 }
-@media (max-width: 500px) {
-  #boxed-wrapper h2 {
-    font-size: 80% !important;
-  }
-}
 #boxed-wrapper h2 p {
   font-family: "eurostile", sans-serif !important;
   font-weight: 700 !important;
   color: #817573 !important;
   font-size: 42px !important;
   line-height: 1.2 !important;
-}
-@media (max-width: 500px) {
-  #boxed-wrapper h2 p {
-    font-size: 80% !important;
-  }
 }
 #boxed-wrapper h3 {
   font-family: "eurostile", sans-serif !important;
@@ -5937,22 +5927,12 @@ body {
   font-size: 28px !important;
   line-height: 1.2 !important;
 }
-@media (max-width: 500px) {
-  #boxed-wrapper h3 {
-    font-size: 80% !important;
-  }
-}
 #boxed-wrapper h3 p {
   font-family: "eurostile", sans-serif !important;
   font-weight: 700 !important;
   color: #817573 !important;
   font-size: 28px !important;
   line-height: 1.2 !important;
-}
-@media (max-width: 500px) {
-  #boxed-wrapper h3 p {
-    font-size: 80% !important;
-  }
 }
 #boxed-wrapper h4 {
   font-family: "eurostile", sans-serif !important;
@@ -5961,22 +5941,12 @@ body {
   font-size: 26px !important;
   line-height: 1.2 !important;
 }
-@media (max-width: 500px) {
-  #boxed-wrapper h4 {
-    font-size: 80% !important;
-  }
-}
 #boxed-wrapper h4 p {
   font-family: "eurostile", sans-serif !important;
   font-weight: 700 !important;
   color: #817573 !important;
   font-size: 26px !important;
   line-height: 1.2 !important;
-}
-@media (max-width: 500px) {
-  #boxed-wrapper h4 {
-    font-size: 80% !important;
-  }
 }
 #boxed-wrapper h5 {
   font-family: "eurostile", sans-serif !important;
