@@ -1,8 +1,6 @@
 <?php
 add_shortcode('print_menu', 'print_menu_function');
-?>
 
-<?php
 function print_menu_function()
 {
     ob_start();
@@ -56,4 +54,3 @@ function print_menu_function()
     <?php
     return ob_get_clean();
 }
-?>
