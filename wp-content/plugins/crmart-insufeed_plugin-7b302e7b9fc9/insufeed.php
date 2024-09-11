@@ -156,80 +156,88 @@ if (!class_exists('Insufeed')) {
 			include sprintf('%s/templates/settings.php', dirname(__FILE__));
 		}
 
-		public static function query($method) {
-			if ($method == 'insu/companies' && is_file(INSUFEED_CACHE_DIR . '/companies.json')) {
-				return file_get_contents(INSUFEED_CACHE_DIR . '/companies.json');
-			}
+        public static function query($method) {
+            if ($method == 'insu/companies' && is_file(INSUFEED_CACHE_DIR . '/companies.json')) {
+                return file_get_contents(INSUFEED_CACHE_DIR . '/companies.json');
+            }
 
-			if (strpos($method, 'acties') !== FALSE) {
-				$file = INSUFEED_CACHE_DIR . '/ ' . str_replace('/', '_', $method) . '.json';
+            if (strpos($method, 'acties') !== FALSE) {
+                $file = INSUFEED_CACHE_DIR . '/ ' . str_replace('/', '_', $method) . '.json';
 
-				if (is_file($file) && filectime($file) > (time() - 24 * 60 * 60)) {
-					return file_get_contents($file);
-				}
-			}
+                if (is_file($file) && filectime($file) > (time() - 24 * 60 * 60)) {
+                    return file_get_contents($file);
+                }
+            }
 
-			if ($method == 'insu/documentcategories' && is_file(INSUFEED_CACHE_DIR . '/document_categories.json')) {
-				return file_get_contents(INSUFEED_CACHE_DIR . '/document_categories.json');
-			}
+            if ($method == 'insu/documentcategories' && is_file(INSUFEED_CACHE_DIR . '/document_categories.json')) {
+                return file_get_contents(INSUFEED_CACHE_DIR . '/document_categories.json');
+            }
 
-			$url = get_option('insufeed_url');
-			$headers = (get_headers($url));
-			$response_code = substr($headers[0], 9, 3);
-			if ($response_code == 301) {
-				$url = remove_http_from_url($url);
-				$url = 'https://' . $url;
-			}
+            $url = get_option('insufeed_url');
+            $headers = get_headers($url);
 
-			$url = $url . $method;
-			$query = array();
-			$query['client_id'] = get_option('insufeed_public_key');
-			$query['secret'] = get_option('insufeed_private_key');
+            // Handle cases where get_headers() returns false
+            if ($headers !== false) {
+                $response_code = substr($headers[0], 9, 3);
+                if ($response_code == 301) {
+                    $url = remove_http_from_url($url);
+                    $url = 'https://' . $url;
+                }
+            } else {
+                // Log the error and return false if headers couldn't be fetched
+                error_log("Failed to retrieve headers for URL: $url");
+                return false;
+            }
 
-			$query = http_build_query($query);
-			$url .= '?' . $query;
+            $url = $url . $method;
+            $query = array();
+            $query['client_id'] = get_option('insufeed_public_key');
+            $query['secret'] = get_option('insufeed_private_key');
 
-			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_HEADER, 0);
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-			curl_setopt($ch, CURLOPT_URL, $url);
+            $query = http_build_query($query);
+            $url .= '?' . $query;
 
-			if (ini_get('open_basedir') == '') {
-				curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
-			}
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_HEADER, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_URL, $url);
 
-			curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
-			$contents = curl_exec($ch);
-			curl_close($ch);
+            if (ini_get('open_basedir') == '') {
+                curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+            }
 
-			if ($contents) {
-				if ($method == 'insu/companies') {
-					$fh = fopen(INSUFEED_CACHE_DIR . '/companies.json', 'w+');
-					fwrite($fh, $contents);
-					fclose($fh);
-				}
+            curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
+            $contents = curl_exec($ch);
+            curl_close($ch);
 
-				if ($method == 'insu/documentcategories') {
-					$fh = fopen(INSUFEED_CACHE_DIR . '/document_categories.json', 'w+');
-					fwrite($fh, $contents);
-					fclose($fh);
-				}
+            if ($contents) {
+                if ($method == 'insu/companies') {
+                    $fh = fopen(INSUFEED_CACHE_DIR . '/companies.json', 'w+');
+                    fwrite($fh, $contents);
+                    fclose($fh);
+                }
 
-				if (strpos($method, 'acties') !== FALSE) {
-					$file = INSUFEED_CACHE_DIR . '/ ' . str_replace('/', '_', $method) . '.json';
-					$fh = fopen($file, 'w+');
-					fwrite($fh, $contents);
-					fclose($fh);
-				}
+                if ($method == 'insu/documentcategories') {
+                    $fh = fopen(INSUFEED_CACHE_DIR . '/document_categories.json', 'w+');
+                    fwrite($fh, $contents);
+                    fclose($fh);
+                }
 
-				return $contents;
-			}
+                if (strpos($method, 'acties') !== FALSE) {
+                    $file = INSUFEED_CACHE_DIR . '/ ' . str_replace('/', '_', $method) . '.json';
+                    $fh = fopen($file, 'w+');
+                    fwrite($fh, $contents);
+                    fclose($fh);
+                }
 
-			return FALSE;
-		}
+                return $contents;
+            }
 
-		public static function activate() {
+            return FALSE;
+        }
+
+        public static function activate() {
 			wp_schedule_event(time(), 'hourly', 'insufeed_cron');
 		}
 

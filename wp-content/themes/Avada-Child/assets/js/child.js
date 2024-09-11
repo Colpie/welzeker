@@ -1,13 +1,49 @@
 (function ($) {
     $(document).ready(function () {
 
+        $('.insurance-button').on('click', function (e) {
+            e.preventDefault();
+            $('.insurance-button.active').removeClass('active');
+            $(this).addClass('active');
+
+            // Get the current height of the element with class 'toggle-column'
+            var currentHeight = $('.toggle-column').height();
+
+            // Set the current height as a fixed height via inline CSS to keep it
+            $('.toggle-column').css('min-height', currentHeight + 'px');
+
+            setTimeout(function () {
+                $('.panel-collapse.in').removeClass('in');
+            }, 800);
+        });
+
+        $('.insu-particulieren').on('click', function () {
+            $('.fusion-accordian.active').fadeOut('slow');
+
+            setTimeout(function () {
+                $('.toggle-particulieren').addClass('active');
+                $('.toggle-particulieren').fadeIn('slow');
+                $('.toggle-column').css('min-height', '0');
+            }, 800);
+        });
+
+        $('.insu-kmo').on('click', function () {
+            $('.fusion-accordian.active').fadeOut('slow');
+
+            setTimeout(function () {
+                $('.toggle-kmo').addClass('active');
+                $('.toggle-kmo').fadeIn('slow');
+                $('.toggle-column').css('min-height', '0');
+            }, 800);
+        });
+
         $('img').hover(function () {
             $(this).data('title', $(this).attr('title')).removeAttr('title');
         }, function () {
             $(this).attr('title', $(this).data('title'));
         });
 
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             if ($(this).scrollTop() > 168) {
                 // Add the class when scrolled more than 168px
                 $('.fusion-menu-header').addClass('sticky-header fadeInDown animated');

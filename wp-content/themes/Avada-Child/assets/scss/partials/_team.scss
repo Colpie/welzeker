@@ -1,5 +1,22 @@
 #boxed-wrapper {
 
+  .full-team-column {
+
+    .fusion-builder-row-inner {
+
+      @media (min-width: 1025px) {
+        margin-bottom: -100px;
+      }
+
+      .team-column {
+
+        @media (min-width: 1025px) {
+          margin-bottom: 45px;
+        }
+      }
+    }
+  }
+
   .team-column {
     margin-bottom: 45px;
 

@@ -20,7 +20,7 @@ function theme_enqueue_styles()
 
     // Bootstrap
     wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap/bootstrap.min.css');
-    wp_enqueue_script('boostrap-js', get_stylesheet_directory_uri() . '/assets/js/bootstrap/bootstrap.min.js', array('jquery'));
+//    wp_enqueue_script('boostrap-js', get_stylesheet_directory_uri() . '/assets/js/bootstrap/bootstrap.min.js', array('jquery'));
 
     // Font awesome
     wp_enqueue_style('font-awesome', get_stylesheet_directory_uri() . '/css/fontawesome/css/light.css');

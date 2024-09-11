@@ -35,4 +35,14 @@
       background: $brown !important;
     }
   }
+
+  .button-flex {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+
+    @media (min-width: 641px) {
+      flex-direction: row;
+    }
+  }
 }

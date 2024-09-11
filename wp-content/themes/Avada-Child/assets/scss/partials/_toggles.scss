@@ -1,0 +1,113 @@
+#boxed-wrapper {
+
+  .insurance-buttons {
+    display: flex;
+    gap: 15px;
+    margin-left: 90px;
+
+    margin-bottom: -25px;
+
+
+    a {
+      padding: 15px 30px !important;
+      font-weight: 700 !important;
+      border-radius: 24px !important;
+
+      text-transform: none !important;
+      color: $brown !important;
+      background: $white !important;
+
+      border: 1px solid $brown;
+      line-height: 1 !important;
+      font-family: $heading !important;
+
+      &.active {
+        color: $white !important;
+        background: $brown !important;
+      }
+    }
+  }
+
+  .toggle-column {
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+  }
+
+  .fusion-accordian {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .panel-group {
+
+    .fusion-panel {
+      border-bottom: 1px solid $green;
+      padding: 20px 0;
+
+      .panel-heading {
+
+        h4 {
+
+          a {
+            font-weight: 600 !important;
+            font-size: 28px !important;
+            color: $green !important;
+
+            font-family: $heading !important;
+            padding-left: 30px;
+
+            &:before {
+              content: "";
+              background: url("/wp-content/themes/Avada-Child/assets/images/icons/toggle_icon.png") no-repeat;
+              position: absolute;
+              left: 0;
+
+              top: 50%;
+              transform: translateY(-50%);
+              width: 15px;
+
+              height: 15px;
+              background-size: contain;
+              transition: all .3s ease-in-out;
+
+              -webkit-transition: all .3s ease-in-out;
+            }
+
+            .fusion-toggle-heading {
+              margin-left: 0 !important;
+            }
+
+            .fusion-toggle-icon-wrapper {
+              display: none !important;
+            }
+          }
+        }
+      }
+
+      .panel-body {
+        color: $text-color !important;
+        font-family: $font !important;
+        padding: 15px 45px 15px 0;
+
+        @media (max-width: 640px) {
+          padding-right: 0;
+        }
+
+        p, li, a {
+          color: $text-color !important;
+        }
+
+        b, strong {
+          color: $brown !important;
+        }
+
+        ul {
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+}
