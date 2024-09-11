@@ -12,8 +12,18 @@ Text Domain:  Avada
 #boxed-wrapper .bigger-font {
   font-size: 26px !important;
 }
+@media (max-width: 500px) {
+  #boxed-wrapper .bigger-font {
+    font-size: 22px !important;
+  }
+}
 #boxed-wrapper .bigger-font p {
   font-size: 26px !important;
+}
+@media (max-width: 500px) {
+  #boxed-wrapper .bigger-font p {
+    font-size: 22px !important;
+  }
 }
 #boxed-wrapper .p-heading {
   font-family: "eurostile", sans-serif !important;

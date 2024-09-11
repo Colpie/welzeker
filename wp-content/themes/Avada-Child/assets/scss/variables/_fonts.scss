@@ -53,8 +53,16 @@ $size-heading-xl: 46px;
   .bigger-font {
     font-size: 26px !important;
 
+    @media (max-width: 500px) {
+      font-size: 22px !important;
+    }
+
     p {
       font-size: 26px !important;
+
+      @media (max-width: 500px) {
+        font-size: 22px !important;
+      }
     }
   }
 
