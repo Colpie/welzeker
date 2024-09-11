@@ -82,7 +82,7 @@ $wrapper_class .= (is_page_template('blank.php')) ? ' wrapper_blank' : '';
                     </a>
                 </div>
                 <div class="side-menu-content-item">
-                    <a href="<?php echo get_site_url(); ?>/bijstandsnummers">
+                    <a href="<?php echo get_site_url(); ?>/bijstandnummers">
                         <img src="/wp-content/themes/Avada-Child/assets/images/icons/icon_bijstand.png">
                         Bijstand
                     </a>
