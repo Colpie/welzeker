@@ -10,6 +10,10 @@
     font-size: 48px !important;
     line-height: 1.2 !important;
 
+    @media (max-width: 500px) {
+      font-size: 80% !important;
+    }
+
     p {
       font-family: $heading !important;
       font-weight: 700 !important;
@@ -18,6 +22,9 @@
       font-size: 48px !important;
       line-height: 1.2 !important;
 
+      @media (max-width: 500px) {
+        font-size: 80% !important;
+      }
     }
   }
 
@@ -29,6 +36,10 @@
     font-size: 42px !important;
     line-height: 1.2 !important;
 
+    @media (max-width: 500px) {
+      font-size: 80% !important;
+    }
+
     p {
       font-family: $heading !important;
       font-weight: 700 !important;
@@ -37,6 +48,9 @@
       font-size: 42px !important;
       line-height: 1.2 !important;
 
+      @media (max-width: 500px) {
+        font-size: 80% !important;
+      }
     }
   }
 
@@ -47,6 +61,9 @@
 
     font-size: 28px !important;
     line-height: 1.2 !important;
+    @media (max-width: 500px) {
+      font-size: 80% !important;
+    }
 
     p {
       font-family: $heading !important;
@@ -56,6 +73,9 @@
       font-size: 28px !important;
       line-height: 1.2 !important;
 
+      @media (max-width: 500px) {
+        font-size: 80% !important;
+      }
     }
   }
 
@@ -67,6 +87,10 @@
     font-size: 26px !important;
     line-height: 1.2 !important;
 
+    @media (max-width: 500px) {
+      font-size: 80% !important;
+    }
+
     p {
       font-family: $heading !important;
       font-weight: 700 !important;
@@ -74,7 +98,10 @@
 
       font-size: 26px !important;
       line-height: 1.2 !important;
+    }
 
+    @media (max-width: 500px) {
+      font-size: 80% !important;
     }
   }
 
