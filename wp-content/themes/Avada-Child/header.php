@@ -76,13 +76,13 @@ $wrapper_class .= (is_page_template('blank.php')) ? ' wrapper_blank' : '';
                     </a>
                 </div>
                 <div class="side-menu-content-item">
-                    <a href="https://crelan.be" target="_blank">
+                    <a href="<?php echo get_site_url(); ?>/klantenzone">
                         <img src="/wp-content/themes/Avada-Child/assets/images/icons/icon_klantenzone.png">
                         Klantenzone
                     </a>
                 </div>
                 <div class="side-menu-content-item">
-                    <a href="<?php echo get_site_url(); ?>/bijstand>" target="_blank">
+                    <a href="<?php echo get_site_url(); ?>/bijstand">
                         <img src="/wp-content/themes/Avada-Child/assets/images/icons/icon_bijstand.png">
                         Bijstand
                     </a>

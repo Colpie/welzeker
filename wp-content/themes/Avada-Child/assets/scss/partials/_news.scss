@@ -1,5 +1,19 @@
 #boxed-wrapper {
 
+  .news-row-overview {
+
+    .latest-news-item {
+      margin-bottom: 90px;
+
+      &:last-child {
+
+        @media (max-width: 1024px) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
   .latest-news-item {
     padding-right: 30px !important;
     margin-bottom: 45px;
@@ -16,6 +30,12 @@
         .card-block {
           -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+
+          .date {
+            font-family: $heading !important;
+            font-weight: 700 !important;
+            color: $light-brown !important;
+          }
 
           h3 {
             margin: 0 0 10px 0 !important;

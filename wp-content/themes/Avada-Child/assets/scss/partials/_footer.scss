@@ -21,9 +21,15 @@
 
         align-items: center;
 
+        &.footer-left-column {
+
+          @media (min-width: 1021px) {
+            padding-left: 55px;
+          }
+        }
+
         @media (max-width: 1200px) {
           padding-left: 30px;
-
         }
 
         @media (max-width: 640px) {

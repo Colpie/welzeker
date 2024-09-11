@@ -71,17 +71,18 @@
 
             justify-content: flex-end;
             color: $green;
-            font-weight: 500 !important;
+            font-weight: 600 !important;
 
             margin-top: 35px;
+            font-size: 16px !important;
 
             @media (max-width: 992px) {
               justify-content: flex-start;
             }
 
             img {
-              width: 35px;
-              height: 35px;
+              width: 30px;
+              height: 30px;
               object-fit: contain;
             }
           }
@@ -154,6 +155,16 @@
 
               font-weight: 500 !important;
 
+              &:hover {
+
+                .menu-text {
+
+                  img {
+                    transform: rotateX(360deg);
+                  }
+                }
+              }
+
               .menu-text {
                 display: flex;
                 flex-direction: column;
@@ -169,6 +180,8 @@
                   min-width: 40px;
 
                   object-fit: contain;
+                  transition: all .9s ease-in-out;
+                  -webkit-transition: all .9s ease-in-out;
                 }
               }
             }

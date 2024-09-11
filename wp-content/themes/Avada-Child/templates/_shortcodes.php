@@ -46,7 +46,7 @@ function print_menu_function()
                 </a>
             </div>
             <div class="custom-menu-item">
-                <a href="<?php echo get_site_url(); ?>/nuttige-info" target="_blank">
+                <a href="<?php echo get_site_url(); ?>/nuttige-info">
                     <img src="/wp-content/themes/Avada-Child/assets/images/menu/icon_info.png">
                     Nuttige info
                 </a>

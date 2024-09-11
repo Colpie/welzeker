@@ -230,6 +230,7 @@
       -ms-transition: all 900ms ease !important;
       -o-transition: all 900ms ease !important;
       min-height: 0 !important;
+      display: none;
     }
 
     &.active-bg {
@@ -245,6 +246,7 @@
       -ms-transform: translateY(0%) !important;
       transform: translateY(0%) !important;
       z-index: 1 !important;
+      display: block;
     }
   }
 }

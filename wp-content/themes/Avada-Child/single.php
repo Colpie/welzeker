@@ -35,6 +35,23 @@ if (!defined('ABSPATH')) {
                     <?php fusion_link_pages(); ?>
                 </div>
 
+                <?php
+                // Get the post with ID 650
+                $post_id = 650;
+                $post = get_post($post_id);
+
+                // Check if the post exists
+                if ($post) {
+                    // Apply content filters to format the content properly
+                    $post_content = apply_filters('the_content', $post->post_content);
+
+                    // Display the post content
+                    echo $post_content;
+                } else {
+                    echo 'Post not found.';
+                }
+                ?>
+
             </article>
         <?php endwhile; ?>
         <?php wp_reset_postdata(); ?>

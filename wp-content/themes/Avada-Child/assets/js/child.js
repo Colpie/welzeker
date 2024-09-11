@@ -1,6 +1,27 @@
 (function ($) {
     $(document).ready(function () {
 
+        // Function to set the height of .cta-column elements
+        function setEqualHeight() {
+            var maxHeight = 0;
+
+            // Find the maximum height of all .cta-column elements
+            $('.cta-column').each(function() {
+                var currentHeight = $(this).outerHeight();
+                if (currentHeight > maxHeight) {
+                    maxHeight = currentHeight;
+                }
+            });
+
+            // Set all .cta-column elements to the height of the tallest one
+            $('.cta-column').css('height', maxHeight + 'px');
+        }
+
+        // Check if .cta-column elements are present on the page
+        if ($('.cta-column').length > 0) {
+            setEqualHeight();
+        }
+
         $('.insurance-button').on('click', function (e) {
             e.preventDefault();
             $('.insurance-button.active').removeClass('active');

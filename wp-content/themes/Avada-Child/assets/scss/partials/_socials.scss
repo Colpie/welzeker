@@ -1,0 +1,33 @@
+#boxed-wrapper {
+
+  .socials-column {
+
+    .fusion-column-wrapper {
+      display: flex;
+      flex-direction: row;
+
+      .fusion-imageframe {
+
+        a {
+
+          &:hover {
+
+            img {
+              transform: translateY(-7px);
+            }
+          }
+
+          img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+
+            min-width: 60px;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}

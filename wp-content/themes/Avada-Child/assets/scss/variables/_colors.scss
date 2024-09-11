@@ -8,6 +8,7 @@ $green: #C4D600;
 $light-beige: #F7F3F2;
 
 $brown: #817573;
+$light-brown: #B7AFAE;
 
 #boxed-wrapper {
 
@@ -24,6 +25,14 @@ $brown: #817573;
 
     h1, h2, h3, h4, h5, h6, p, a, li, strong {
       color: $white !important;
+    }
+  }
+
+  .brown-color {
+    color: $brown !important;
+
+    h1, h2, h3, h4, h5, h6, p, a, li, strong {
+      color: $brown !important;
     }
   }
 }

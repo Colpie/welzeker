@@ -90,6 +90,7 @@ function print_latest_news_item()
                     <a href="<?php print get_the_permalink($post->ID) ?>">
                         <div class="card-block">
                             <div class="title">
+                                <span class="date"><?php echo get_the_date('d/m'); ?></span>
                                 <h3 class="accent">
                                     <?php print the_title() ?>
                                 </h3>
@@ -125,7 +126,7 @@ function print_all_news_item()
 {
     global $post;
     global $wp_query;
-    $ppp = 9;
+    $ppp = 6;
 
 
     $args = array(
@@ -144,22 +145,34 @@ function print_all_news_item()
         while ($the_query->have_posts()) :
             $the_query->the_post(); ?>
 
-            <div class="latest-news-item col-lg-4 col-md-6 col-sm-12">
+            <div class="latest-news-item col-lg-4 col-md-4 col-sm-12">
                 <div class="card">
-                    <div class="card-img-top">
-                        <?php echo get_the_post_thumbnail($post->ID, 'full') ?>
-                        <a class="fusion-button news-read-more"
-                           href="<?php print get_the_permalink($post->ID) ?>"><?php print __('Lees meer'); ?></a>
-                    </div>
-                    <div class="card-block">
-                        <div class="title">
-                            <?php print the_title() ?>
+                    <a href="<?php print get_the_permalink($post->ID) ?>">
+                        <div class="card-block">
+                            <div class="title">
+                                <span class="date"><?php echo get_the_date('d/m'); ?></span>
+                                <h3 class="accent">
+                                    <?php print the_title() ?>
+                                </h3>
+                            </div>
+                            <div class="excerpt">
+                                <?php
+                                $excerpt = get_the_excerpt($post->ID);
+                                $trimmed_excerpt = wp_trim_words($excerpt, 25);
+                                echo $trimmed_excerpt;
+                                ?>
+
+                            </div>
                         </div>
-                    </div>
+                        <div class="card-footer">
+                            <span class="fusion-button"
+                                  href="<?php print get_the_permalink($post->ID) ?>"><?php print __('Lees meer'); ?></span>
+                        </div>
+                    </a>
                 </div>
             </div>
         <?php endwhile;
-        echo ' <div class="col-md-12 archive-button"><a class="fusion-button light-green" href="/nuttige-info/nieuws-archief/">Alle nieuwsberichten</a></div>';
+//        echo ' <div class="col-md-12 archive-button"><a class="fusion-button light-green" href="/nuttige-info/nieuws-archief/">Alle nieuwsberichten</a></div>';
         echo '</div>';
         wp_reset_postdata();
         return ob_get_clean();

@@ -6,6 +6,35 @@
       width: 50% !important;
     }
 
+    &.brown-cta {
+
+      .fusion-column-wrapper {
+        border-color: $brown !important;
+        gap: 5px;
+
+        .fusion-image-element {
+
+          .fusion-imageframe {
+
+            img {
+              width: 40px;
+              height: 40px;
+              min-width: 40px;
+
+              object-fit: contain;
+            }
+          }
+        }
+
+        .fusion-text {
+
+          p, a {
+            color: $brown !important;
+          }
+        }
+      }
+    }
+
     .fusion-column-wrapper {
       padding: 15px;
       border: 1px solid $white !important;
@@ -18,7 +47,7 @@
       .fusion-text {
         text-align: center;
 
-        p,a {
+        p, a {
           color: $white !important;
           font-size: 14px !important;
           font-weight: 500 !important;
