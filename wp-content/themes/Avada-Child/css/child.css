@@ -6202,8 +6202,13 @@ body {
   height: 100%;
   width: 500%;
   position: absolute;
-  left: calc(100% - 15px);
+  left: 100%;
   top: 0;
+}
+@media (min-width: 1025px) {
+  #boxed-wrapper .brown-after .fusion-column-wrapper:after {
+    left: calc(100% - 15px);
+  }
 }
 #boxed-wrapper .brown-after .cta-column .fusion-column-wrapper:after {
   display: none !important;
