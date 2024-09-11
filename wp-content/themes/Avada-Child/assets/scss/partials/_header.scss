@@ -46,9 +46,20 @@
               margin-top: 35px;
             }
 
+            @media (max-width: 500px) {
+              position: absolute;
+              right: -15px;
+              top: 35px;
+            }
+
             a {
               width: 45px;
               height: 45px;
+
+              @media (max-width: 500px) {
+                width: 35px;
+                height: 35px;
+              }
 
               &:hover {
 
@@ -64,6 +75,11 @@
 
                 transition: all .3s ease-in-out;
                 -webkit-transition: all .3s ease-in-out;
+
+                @media (max-width: 500px) {
+                  width: 35px;
+                  height: 35px;
+                }
               }
             }
           }

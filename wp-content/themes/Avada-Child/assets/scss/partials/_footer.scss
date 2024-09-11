@@ -61,6 +61,10 @@
             padding-left: 30px;
           }
 
+          @media (max-width: 500px) {
+            padding-bottom: 30px;
+          }
+
           &:before {
             display: none;
           }
