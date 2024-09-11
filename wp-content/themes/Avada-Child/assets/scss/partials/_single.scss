@@ -27,7 +27,15 @@
       }
     }
 
+    #content {
+
+      @media (max-width: 640px) {
+        margin-bottom: 90px !important;
+      }
+    }
+
     article {
+      margin-bottom: 0 !important;
 
       @media (min-width: 1300px) {
         padding-left: 60px;
@@ -38,6 +46,10 @@
 
         @media (min-width: 1025px) {
           padding-left: 75px;
+        }
+
+        @media (max-width: 640px) {
+          margin-bottom: 25px !important;
         }
 
         h1 {
@@ -63,6 +75,10 @@
 
     .social-widget {
       margin-top: 90px;
+
+      @media (max-width: 640px) {
+        margin-bottom: 0 !important;
+      }
 
       @media (max-width: 1024px) {
 
