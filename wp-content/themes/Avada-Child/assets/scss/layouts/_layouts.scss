@@ -31,8 +31,13 @@
 
   .brown-background-small {
 
-    @media (max-width: 640px) {
+    @media (max-width: 1024px) {
       background: $brown !important;
+
+      .fusion-layout-column {
+        border-radius: 0 !important;
+        --awb-border-radius: 0 !important;
+      }
     }
   }
 

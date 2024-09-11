@@ -7,6 +7,12 @@
 
     margin-bottom: -25px;
 
+    @media (max-width: 640px) {
+      flex-direction: column;
+      margin-bottom: 45px;
+      margin-left: 0
+    }
+
 
     a {
       padding: 15px 30px !important;
@@ -20,6 +26,8 @@
       border: 1px solid $brown;
       line-height: 1 !important;
       font-family: $heading !important;
+
+      text-align: center;
 
       &.active {
         color: $white !important;
