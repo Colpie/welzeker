@@ -22,25 +22,25 @@ function print_menu_function()
                 </a>
             </div>
             <div class="custom-menu-item">
-                <a href="<?php echo get_site_url(); ?>/sparen-beleggen" target="_blank">
+                <a href="<?php echo get_site_url(); ?>/sparen-beleggen">
                     <img src="/wp-content/themes/Avada-Child/assets/images/menu/icon_sparen.png">
                     Sparen & Beleggen
                 </a>
             </div>
             <div class="custom-menu-item">
-                <a href="<?php echo get_site_url(); ?>/kredieten" target="_blank">
+                <a href="<?php echo get_site_url(); ?>/kredieten">
                     <img src="/wp-content/themes/Avada-Child/assets/images/menu/icon_kredieten.png">
                     Kredieten
                 </a>
             </div>
             <div class="custom-menu-item">
-                <a href="<?php echo get_site_url(); ?>/verzekeringen" target="_blank">
+                <a href="<?php echo get_site_url(); ?>/verzekeringen">
                     <img src="/wp-content/themes/Avada-Child/assets/images/menu/icon_verzekeringen.png">
                     Kredieten
                 </a>
             </div>
             <div class="custom-menu-item">
-                <a href="<?php echo get_site_url(); ?>/schade" target="_blank">
+                <a href="<?php echo get_site_url(); ?>/schade">
                     <img src="/wp-content/themes/Avada-Child/assets/images/menu/icon_schade.png">
                     Schade
                 </a>
