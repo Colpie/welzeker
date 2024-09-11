@@ -34,13 +34,25 @@
       }
 
       .post-content {
+        margin-top: 90px;
 
         @media (min-width: 1025px) {
           padding-left: 75px;
         }
 
+        h1 {
+          margin-top: 0 !important;
+        }
+
+        h2, h3, h4 {
+          font-size: 28px !important;
+          margin: 10px 0 15px !important;
+        }
+
         .fusion-button {
-          margin-top: 70px;
+          margin-top: 40px;
+          padding: 5px 15px !important;
+          font-weight: 500 !important;
         }
       }
     }

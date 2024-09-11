@@ -6,8 +6,12 @@
   }
 
   .legal-page-content {
-    padding: 90px 0 70px;
+    padding: 180px 0 70px 70px;
     overflow: hidden;
+
+    @media (max-width: 1024px) {
+      padding: 90px 0 70px 0;
+    }
 
     .grid-fix {
 

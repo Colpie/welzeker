@@ -139,7 +139,11 @@
 
         .footer-inner-column {
           display: flex;
-          gap: 45px;
+          gap: 25px;
+
+          @media (min-width: 1250px) {
+            gap: 45px;
+          }
 
           @media (max-width: 640px) {
             gap: 0;

@@ -5225,7 +5225,12 @@ div.image-cropper > img {
 }
 #boxed-wrapper .custom-footer .fusion-row .footer-column .footer-inner-column {
   display: flex;
-  gap: 45px;
+  gap: 25px;
+}
+@media (min-width: 1250px) {
+  #boxed-wrapper .custom-footer .fusion-row .footer-column .footer-inner-column {
+    gap: 45px;
+  }
 }
 @media (max-width: 640px) {
   #boxed-wrapper .custom-footer .fusion-row .footer-column .footer-inner-column {
@@ -5452,6 +5457,7 @@ div.image-cropper > img {
 #boxed-wrapper .latest-news-item .card a .card-block {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  font-size: 18px !important;
 }
 #boxed-wrapper .latest-news-item .card a .card-block .date {
   font-family: "eurostile", sans-serif !important;
@@ -5459,7 +5465,10 @@ div.image-cropper > img {
   color: #B7AFAE !important;
 }
 #boxed-wrapper .latest-news-item .card a .card-block h3 {
-  margin: 0 0 10px 0 !important;
+  margin: 0 0 15px 0 !important;
+}
+#boxed-wrapper .latest-news-item .card a .card-block p {
+  font-size: 16px !important;
 }
 #boxed-wrapper .latest-news-item .card a .card-footer {
   border: 0 !important;
@@ -5548,13 +5557,25 @@ div.image-cropper > img {
     padding-left: 60px;
   }
 }
+.single #boxed-wrapper article .post-content {
+  margin-top: 90px;
+}
 @media (min-width: 1025px) {
   .single #boxed-wrapper article .post-content {
     padding-left: 75px;
   }
 }
+.single #boxed-wrapper article .post-content h1 {
+  margin-top: 0 !important;
+}
+.single #boxed-wrapper article .post-content h2, .single #boxed-wrapper article .post-content h3, .single #boxed-wrapper article .post-content h4 {
+  font-size: 28px !important;
+  margin: 10px 0 15px !important;
+}
 .single #boxed-wrapper article .post-content .fusion-button {
-  margin-top: 70px;
+  margin-top: 40px;
+  padding: 5px 15px !important;
+  font-weight: 500 !important;
 }
 .single #boxed-wrapper .social-widget {
   margin-top: 90px;
@@ -6108,6 +6129,10 @@ body {
     flex-direction: column-reverse !important;
   }
 }
+#boxed-wrapper .fusion-text a {
+  color: #C4D600 !important;
+  text-decoration: underline !important;
+}
 
 #boxed-wrapper .brown-after .fusion-column-wrapper:after {
   content: "";
@@ -6348,8 +6373,13 @@ body {
   padding-right: 0 !important;
 }
 .page-template-legal_info .legal-page-content {
-  padding: 90px 0 70px;
+  padding: 180px 0 70px 70px;
   overflow: hidden;
+}
+@media (max-width: 1024px) {
+  .page-template-legal_info .legal-page-content {
+    padding: 90px 0 70px 0;
+  }
 }
 @media (max-width: 1200px) {
   .page-template-legal_info .legal-page-content .grid-fix {

@@ -30,6 +30,7 @@
         .card-block {
           -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+          font-size: 18px !important;
 
           .date {
             font-family: $heading !important;
@@ -38,7 +39,11 @@
           }
 
           h3 {
-            margin: 0 0 10px 0 !important;
+            margin: 0 0 15px 0 !important;
+          }
+
+          p {
+            font-size: 16px !important;
           }
         }
 
