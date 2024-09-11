@@ -3,7 +3,10 @@
   .news-row-overview {
 
     .latest-news-item {
-      margin-bottom: 90px;
+
+      @media (min-width: 641px) {
+        margin-bottom: 90px;
+      }
 
       &:last-child {
 

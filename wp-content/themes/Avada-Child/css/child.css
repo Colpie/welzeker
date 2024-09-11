@@ -5489,8 +5489,10 @@ div.image-cropper > img {
   margin-top: 0 !important;
 }
 
-#boxed-wrapper .news-row-overview .latest-news-item {
-  margin-bottom: 90px;
+@media (min-width: 641px) {
+  #boxed-wrapper .news-row-overview .latest-news-item {
+    margin-bottom: 90px;
+  }
 }
 @media (max-width: 1024px) {
   #boxed-wrapper .news-row-overview .latest-news-item:last-child {
