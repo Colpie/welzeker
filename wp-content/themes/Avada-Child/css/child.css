@@ -5640,6 +5640,11 @@ div.image-cropper > img {
 .single #boxed-wrapper article .post-content h1 {
   margin-top: 0 !important;
 }
+@media (max-width: 500px) {
+  .single #boxed-wrapper article .post-content h1 {
+    font-size: 32px !important;
+  }
+}
 .single #boxed-wrapper article .post-content h2, .single #boxed-wrapper article .post-content h3, .single #boxed-wrapper article .post-content h4 {
   font-size: 28px !important;
   margin: 10px 0 15px !important;
@@ -5651,6 +5656,17 @@ div.image-cropper > img {
 }
 .single #boxed-wrapper .social-widget {
   margin-top: 90px;
+}
+@media (max-width: 1024px) {
+  .single #boxed-wrapper .social-widget:after {
+    content: "";
+    background: #817573;
+    width: calc(100% + 60px);
+    height: 100%;
+    position: absolute;
+    left: -30px;
+    top: 0;
+  }
 }
 @media (min-width: 1025px) {
   .single #boxed-wrapper .social-widget {
