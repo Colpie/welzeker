@@ -34,7 +34,7 @@ function print_menu_function()
             <div class="custom-menu-item">
                 <a href="<?php echo get_site_url(); ?>/verzekeringen">
                     <img src="/wp-content/themes/Avada-Child/assets/images/menu/icon_verzekeringen.png">
-                    Kredieten
+                    verzekeringen
                 </a>
             </div>
             <div class="custom-menu-item">
