@@ -38,6 +38,11 @@
             @media (max-width: 1200px) {
               width: 250px;
             }
+
+            @media (max-width: 500px) {
+              width: 50%;
+              max-width: 100%;
+            }
           }
 
           .socials {
