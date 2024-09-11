@@ -5334,7 +5334,7 @@ div.image-cropper > img {
   #boxed-wrapper header .fusion-header .fusion-row .logo-section .socials {
     position: absolute;
     right: -15px;
-    top: 35px;
+    top: 60px;
   }
 }
 #boxed-wrapper header .fusion-header .fusion-row .logo-section .socials a {
@@ -5456,14 +5456,18 @@ div.image-cropper > img {
   -webkit-transition: all 0.9s ease-in-out;
 }
 
-.home #boxed-wrapper .fusion-menu-header {
-  display: none;
-  position: fixed;
-  top: 0;
-  width: 100%;
+@media (min-width: 1126px) {
+  .home #boxed-wrapper .fusion-menu-header {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
 }
-.home #boxed-wrapper .fusion-menu-header.sticky-active {
-  display: flex;
+@media (min-width: 1126px) {
+  .home #boxed-wrapper .fusion-menu-header.sticky-active {
+    display: flex;
+  }
 }
 .home #boxed-wrapper .fusion-menu-header .menu-row {
   margin-top: 0 !important;

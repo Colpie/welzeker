@@ -95,14 +95,30 @@
             $(this).attr('title', $(this).data('title'));
         });
 
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 168) {
-                // Add the class when scrolled more than 168px
-                $('.fusion-menu-header').addClass('sticky-header fadeInDown animated');
+        function checkWidth() {
+            if ($(window).width() > 1126) {
+                // Run the scroll function if width is more than 1126px
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 168) {
+                        // Add the class when scrolled more than 168px
+                        $('.fusion-menu-header').addClass('sticky-header fadeInDown animated');
+                    } else {
+                        // Remove the class if scrolled less than 168px
+                        $('.fusion-menu-header').removeClass('sticky-header fadeInDown animated');
+                    }
+                });
             } else {
-                // Remove the class if scrolled less than 168px
+                // Remove the class if screen width is less than 1126px
                 $('.fusion-menu-header').removeClass('sticky-header fadeInDown animated');
             }
+        }
+
+        // Check width on load
+        checkWidth();
+
+        // Check width on window resize
+        $(window).resize(function () {
+            checkWidth();
         });
 
         function checkMenuPosition() {
