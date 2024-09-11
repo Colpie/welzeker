@@ -5007,12 +5007,12 @@ div.image-cropper > img {
 #boxed-wrapper .cta-column .fusion-column-wrapper .fusion-text {
   text-align: center;
 }
-#boxed-wrapper .cta-column .fusion-column-wrapper .fusion-text p {
+#boxed-wrapper .cta-column .fusion-column-wrapper .fusion-text p, #boxed-wrapper .cta-column .fusion-column-wrapper .fusion-text a {
   color: #ffffff !important;
   font-size: 14px !important;
   font-weight: 500 !important;
 }
-#boxed-wrapper .cta-column .fusion-column-wrapper .fusion-text p:last-child {
+#boxed-wrapper .cta-column .fusion-column-wrapper .fusion-text p:last-child, #boxed-wrapper .cta-column .fusion-column-wrapper .fusion-text a:last-child {
   margin-bottom: 0 !important;
 }
 
