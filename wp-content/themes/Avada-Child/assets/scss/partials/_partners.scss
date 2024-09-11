@@ -1,0 +1,27 @@
+#boxed-wrapper {
+
+  .partners-swiper {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 45px;
+  }
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        //filter: grayscale(100%);
+        //opacity: .65;
+      }
+    }
+  }
+}

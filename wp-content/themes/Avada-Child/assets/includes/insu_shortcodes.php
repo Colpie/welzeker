@@ -44,15 +44,17 @@ function insusite_insufeed_partners()
 
     $chunked_logos = array_chunk($logos, 6);
 
-    echo '<div class="insupartners">';
+    echo '<div class="partners-swiper swiper-container swiper">';
+    echo '<div class="partners-wrapper swiper-wrapper">';
 
     foreach ($chunked_logos as $logo_group) {
 
         foreach ($logo_group as $logo) {
-            echo '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 partner" data-match-height="insu-partner"><div class="logo widget"><a><img src="' . $logo['logo'] . '" alt="' . $logo['title'] . '" title="' . $logo['title'] . '" width="50%" /></a></div></div>';
+            echo '<div class="swiper-slide partner" data-match-height="insu-partner"><a><img src="' . $logo['logo'] . '" alt="' . $logo['title'] . '" title="' . $logo['title'] . '" width="50%" /></a></div>';
         }
 
     }
+    echo '</div>';
     echo '</div>';
 
     $output_string = ob_get_contents();

@@ -1,6 +1,37 @@
 (function ($) {
     $(document).ready(function () {
 
+        const swiper = new Swiper('.partners-swiper', {
+            slidesPerView: 3,
+            spaceBetween: 0,
+            direction: 'horizontal',
+
+            loop: true,
+            speed: 5000,
+            autoplay: true,
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            breakpoints: {
+                0: {
+                    slidesPerView: 3
+                },
+
+                768: {
+                    slidesPerView: 3
+                },
+                1024: {
+                    slidesPerView: 6,
+                },
+                1440: {
+                    slidesPerView: 6,
+                }
+            }
+        });
+
         // Function to set the height of .cta-column elements
         function setEqualHeight() {
             var maxHeight = 0;

@@ -5485,6 +5485,22 @@ div.image-cropper > img {
   text-transform: none !important;
 }
 
+#boxed-wrapper .partners-swiper {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 45px;
+}
+#boxed-wrapper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#boxed-wrapper .swiper-slide a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 #boxed-wrapper .side-menu {
   position: fixed;
   right: 0;
@@ -6366,6 +6382,58 @@ body {
 
 .cookie-reload {
   padding: 0 !important;
+}
+
+#documentcenter .documentcenter_searchitem {
+  margin-bottom: 30px;
+}
+#documentcenter label {
+  color: #4B4B4B !important;
+  font-weight: 700 !important;
+  font-size: 24px;
+  display: block;
+}
+#documentcenter #partner,
+#documentcenter #category,
+#documentcenter #free-search {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: 0;
+  border-bottom: 1px solid #817573;
+  border-radius: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: gray;
+  transition: all 0.5s ease;
+}
+#documentcenter .btn-main {
+  background: #C4D600 !important;
+  padding: 15px 30px !important;
+  font-weight: 500 !important;
+  border-radius: 32px !important;
+  color: #ffffff !important;
+  text-transform: none !important;
+}
+#documentcenter #nrresults {
+  color: #4B4B4B !important;
+  display: inline-block;
+}
+#documentcenter #results {
+  margin-top: 30px;
+}
+#documentcenter #results ul {
+  list-style: none;
+  padding: 0;
+}
+#documentcenter #results ul li a {
+  color: #4B4B4B;
+  align-items: center;
+}
+#documentcenter #results ul li a:hover {
+  text-decoration: none;
+  color: #C4D600;
 }
 
 .page-template-legal_info .fusion-fullwidth {

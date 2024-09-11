@@ -14,7 +14,6 @@ function theme_enqueue_styles()
     wp_enqueue_script('scrollspy', get_stylesheet_directory_uri() . '/assets/js/scrollspy.js', array(), '1.0.0', true);
     wp_enqueue_script('splitting-script', get_stylesheet_directory_uri() . '/assets/js/splitting.js', array(), '1.0.0', true);
 
-
     // Import WOW
     wp_enqueue_script('wow', get_stylesheet_directory_uri() . '/assets/js/wow.min.js', array('jquery'));
 
