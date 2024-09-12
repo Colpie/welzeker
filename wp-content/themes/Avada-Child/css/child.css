@@ -6139,7 +6139,7 @@ body {
 }
 #boxed-wrapper .fusion-flyout-menu .fusion-menu li a .menu-text {
   display: flex;
-  gap: 15px;
+  gap: 45px;
   text-align: center;
   justify-content: center;
   align-items: center;
