@@ -90,9 +90,7 @@
           border: 0 !important;
 
           width: 100%;
-          justify-content: center;
           position: relative;
-
 
           &:hover {
             text-decoration: none;
@@ -101,10 +99,9 @@
 
           .menu-text {
             display: flex;
-            flex-direction: column;
             gap: 15px;
-
             text-align: center;
+            
             justify-content: center;
             align-items: center;
 
@@ -203,6 +200,8 @@
   .change {
 
     .fusion-flyout-menu-toggle {
+      padding-right: 0 !important;
+      width: 27px;
 
       .fusion-toggle-icon-line {
         background: $white !important;

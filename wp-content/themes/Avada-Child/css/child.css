@@ -6131,7 +6131,6 @@ body {
   height: auto !important;
   border: 0 !important;
   width: 100%;
-  justify-content: center;
   position: relative;
 }
 #boxed-wrapper .fusion-flyout-menu .fusion-menu li a:hover {
@@ -6140,7 +6139,6 @@ body {
 }
 #boxed-wrapper .fusion-flyout-menu .fusion-menu li a .menu-text {
   display: flex;
-  flex-direction: column;
   gap: 15px;
   text-align: center;
   justify-content: center;
@@ -6207,6 +6205,10 @@ body {
 }
 #boxed-wrapper .fusion-flyout-menu .fusion-menu li .sub-menu li a .custom-caret {
   display: none !important;
+}
+#boxed-wrapper .change .fusion-flyout-menu-toggle {
+  padding-right: 0 !important;
+  width: 27px;
 }
 #boxed-wrapper .change .fusion-flyout-menu-toggle .fusion-toggle-icon-line {
   background: #ffffff !important;

@@ -41,7 +41,7 @@
             var maxHeight = 0;
 
             // Find the maximum height of all .cta-column elements
-            $('.cta-column').each(function() {
+            $('.cta-column').each(function () {
                 var currentHeight = $(this).outerHeight();
                 if (currentHeight > maxHeight) {
                     maxHeight = currentHeight;
@@ -100,9 +100,12 @@
         });
 
         function checkWidth() {
+            // Unbind any previously bound scroll event to avoid duplicates
+            $(window).off('scroll');
+
             if ($(window).width() > 1126) {
-                // Run the scroll function if width is more than 1126px
-                $(window).scroll(function () {
+                // Bind the scroll event only for screens wider than 1126px
+                $(window).on('scroll', function () {
                     if ($(this).scrollTop() > 168) {
                         // Add the class when scrolled more than 168px
                         $('.fusion-menu-header').addClass('sticky-header fadeInDown animated');
@@ -112,18 +115,21 @@
                     }
                 });
             } else {
-                // Remove the class if screen width is less than 1126px
+                // Ensure the class is removed if the screen width is less than 1126px
                 $('.fusion-menu-header').removeClass('sticky-header fadeInDown animated');
             }
         }
 
-        // Check width on load
-        checkWidth();
+// Check width on load
+        $(document).ready(function () {
+            checkWidth();
+        });
 
-        // Check width on window resize
+// Check width on window resize
         $(window).resize(function () {
             checkWidth();
         });
+
 
         function checkMenuPosition() {
             var menu = $('.home .custom-menu-row');
