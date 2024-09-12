@@ -70,7 +70,7 @@ $wrapper_class .= (is_page_template('blank.php')) ? ' wrapper_blank' : '';
                     </a>
                 </div>
                 <div class="side-menu-content-item">
-                    <a href="mailto:<?php echo get_option('insusite_mail'); ?>">
+                    <a href="mailto:<?php echo get_option('insusite_email'); ?>">
                         <img src="/wp-content/themes/Avada-Child/assets/images/icons/icon_mail.png">
                         Mail ons
                     </a>
