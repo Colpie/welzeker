@@ -28,15 +28,18 @@
             var menu = $('.home .custom-menu-row');
             var header = $('.home .fusion-menu-header');
 
-            if (menu.length) {
-                var menuOffset = menu.offset().top;
-                var windowScroll = $(window).scrollTop();
+            if ($(window).width() > 1126) {
+
+                if (menu.length) {
+                    var menuOffset = menu.offset().top;
+                    var windowScroll = $(window).scrollTop();
 
 
-                if (windowScroll > menuOffset) {
-                    header.addClass('sticky-active fadeInDown animated');
-                } else {
-                    header.removeClass('sticky-active fadeInDown animated');
+                    if (windowScroll > menuOffset) {
+                        header.addClass('sticky-active fadeInDown animated');
+                    } else {
+                        header.removeClass('sticky-active fadeInDown animated');
+                    }
                 }
             }
         }
@@ -48,6 +51,7 @@
         });
 
         $(window).resize(function () {
+            checkMenuPosition();
             checkWidth();
         });
 
