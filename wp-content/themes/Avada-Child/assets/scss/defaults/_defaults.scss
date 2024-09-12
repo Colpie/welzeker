@@ -50,6 +50,35 @@ body {
       color: $white !important;
       text-transform: none !important;
 
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+
+      &:hover {
+
+        &:before {
+          top: -40%;
+        }
+      }
+
+      &:before {
+        transition-duration: .8s;
+        position: absolute;
+        width: 200%;
+
+        height: 200%;
+        content: "";
+        top: 110%;
+
+        left: 50%;
+        background-color: $text-color;
+        transform: translateX(-50%);
+
+        border-radius: 50%;
+        z-index: -1;
+        transition: all .5s linear;
+      }
+
       .fusion-button-text {
         text-transform: none !important;
         font-size: 18px !important;

@@ -5542,6 +5542,26 @@ div.image-cropper > img {
   border-radius: 24px !important;
   color: #ffffff !important;
   text-transform: none !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+#boxed-wrapper .latest-news-item .card a .card-footer .fusion-button:hover:before {
+  top: -40%;
+}
+#boxed-wrapper .latest-news-item .card a .card-footer .fusion-button:before {
+  transition-duration: 0.8s;
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  content: "";
+  top: 110%;
+  left: 50%;
+  background-color: #4B4B4B;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  z-index: -1;
+  transition: all 0.5s linear;
 }
 
 #boxed-wrapper .partners-swiper {
@@ -5911,6 +5931,26 @@ body {
   border-radius: 32px !important;
   color: #ffffff !important;
   text-transform: none !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+#boxed-wrapper a.fusion-button:hover:before {
+  top: -40%;
+}
+#boxed-wrapper a.fusion-button:before {
+  transition-duration: 0.8s;
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  content: "";
+  top: 110%;
+  left: 50%;
+  background-color: #4B4B4B;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  z-index: -1;
+  transition: all 0.5s linear;
 }
 #boxed-wrapper a.fusion-button .fusion-button-text {
   text-transform: none !important;
