@@ -4988,6 +4988,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   border-radius: 0 0 120px 0;
 }
 #boxed-wrapper .banner-row .fusion-builder-row .fusion-layout-column .fusion-column-wrapper .fusion-image-element .fusion-imageframe img {
+  height: 100%;
   width: 100%;
   object-fit: cover;
   border-radius: 0 0 120px 0;
