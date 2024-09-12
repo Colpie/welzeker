@@ -5,6 +5,57 @@
             $('.side-menu').addClass("loaded");
         }, 800);
 
+        function checkWidth() {
+            $(window).off('scroll');
+
+            if ($(window).width() > 1126) {
+                // Bind scroll event for larger screens
+                $(window).on('scroll', function () {
+                    checkMenuPosition();
+
+                    if ($(this).scrollTop() > 168) {
+                        $('.fusion-menu-header').addClass('sticky-header fadeInDown animated');
+                    } else {
+                        $('.fusion-menu-header').removeClass('sticky-header fadeInDown animated');
+                    }
+                });
+            } else {
+                $('.fusion-menu-header').removeClass('sticky-header fadeInDown animated');
+            }
+        }
+
+        function checkMenuPosition() {
+            var menu = $('.home .custom-menu-row');
+            var header = $('.home .fusion-menu-header');
+
+            if (menu.length) {
+                var menuOffset = menu.offset().top;
+                var windowScroll = $(window).scrollTop();
+
+
+                if (windowScroll > menuOffset) {
+                    header.addClass('sticky-active fadeInDown animated');
+                } else {
+                    header.removeClass('sticky-active fadeInDown animated');
+                }
+            }
+        }
+
+
+        $(document).ready(function () {
+            checkWidth();
+            checkMenuPosition();
+        });
+
+        $(window).resize(function () {
+            checkWidth();
+        });
+
+        $(window).on('scroll resize', function () {
+            checkMenuPosition();
+        });
+
+
         const swiper = new Swiper('.partners-swiper', {
             slidesPerView: 3,
             spaceBetween: 0,
@@ -36,11 +87,9 @@
             }
         });
 
-        // Function to set the height of .cta-column elements
         function setEqualHeight() {
             var maxHeight = 0;
 
-            // Find the maximum height of all .cta-column elements
             $('.cta-column').each(function () {
                 var currentHeight = $(this).outerHeight();
                 if (currentHeight > maxHeight) {
@@ -48,11 +97,9 @@
                 }
             });
 
-            // Set all .cta-column elements to the height of the tallest one
             $('.cta-column').css('height', maxHeight + 'px');
         }
 
-        // Check if .cta-column elements are present on the page
         if ($('.cta-column').length > 0) {
             setEqualHeight();
         }
@@ -62,10 +109,8 @@
             $('.insurance-button.active').removeClass('active');
             $(this).addClass('active');
 
-            // Get the current height of the element with class 'toggle-column'
             var currentHeight = $('.toggle-column').height();
 
-            // Set the current height as a fixed height via inline CSS to keep it
             $('.toggle-column').css('min-height', currentHeight + 'px');
 
             setTimeout(function () {
@@ -98,63 +143,6 @@
         }, function () {
             $(this).attr('title', $(this).data('title'));
         });
-
-        function checkWidth() {
-            // Unbind any previously bound scroll event to avoid duplicates
-            $(window).off('scroll');
-
-            if ($(window).width() > 1126) {
-                // Bind the scroll event only for screens wider than 1126px
-                $(window).on('scroll', function () {
-                    if ($(this).scrollTop() > 168) {
-                        // Add the class when scrolled more than 168px
-                        $('.fusion-menu-header').addClass('sticky-header fadeInDown animated');
-                    } else {
-                        // Remove the class if scrolled less than 168px
-                        $('.fusion-menu-header').removeClass('sticky-header fadeInDown animated');
-                    }
-                });
-            } else {
-                // Ensure the class is removed if the screen width is less than 1126px
-                $('.fusion-menu-header').removeClass('sticky-header fadeInDown animated');
-            }
-        }
-
-// Check width on load
-        $(document).ready(function () {
-            checkWidth();
-        });
-
-// Check width on window resize
-        $(window).resize(function () {
-            checkWidth();
-        });
-
-
-        function checkMenuPosition() {
-            var menu = $('.home .custom-menu-row');
-            var header = $('.home .fusion-menu-header');
-
-            if (menu.length) {
-                var menuOffset = menu.offset().top; // Get the top position of the custom-menu-row
-                var windowScroll = $(window).scrollTop(); // Get the current scroll position
-
-                // If the user has scrolled past the top of custom-menu-row
-                if (windowScroll > menuOffset) {
-                    header.addClass('sticky-active fadeInDown animated'); // Add class when out of view
-                } else {
-                    header.removeClass('sticky-active fadeInDown animated'); // Remove class when in view
-                }
-            }
-        }
-
-        // Check on scroll and window resize
-        $(window).on('scroll resize', function () {
-            checkMenuPosition();
-        });
-
-        // Initial check on page load
-        checkMenuPosition();
 
         // Mobile menu
         $('.fusion-flyout-menu-toggle').on('click', function (e) {
