@@ -6,10 +6,15 @@
     top: 150px;
 
     z-index: 999999;
+    transform: translateX(100%);
+    transition: all .5s linear;
+
+    &.loaded {
+      transform: translateX(0);
+    }
 
     &.no-z {
       z-index: 99;
-
     }
 
     .side-menu-wrapper {

@@ -1,6 +1,10 @@
 (function ($) {
     $(document).ready(function () {
 
+        setTimeout(function () {
+            $('.side-menu').addClass("loaded");
+        }, 800);
+
         const swiper = new Swiper('.partners-swiper', {
             slidesPerView: 3,
             spaceBetween: 0,

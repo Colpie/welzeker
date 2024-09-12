@@ -5585,6 +5585,11 @@ div.image-cropper > img {
   right: 0;
   top: 150px;
   z-index: 999999;
+  transform: translateX(100%);
+  transition: all 0.5s linear;
+}
+#boxed-wrapper .side-menu.loaded {
+  transform: translateX(0);
 }
 #boxed-wrapper .side-menu.no-z {
   z-index: 99;
