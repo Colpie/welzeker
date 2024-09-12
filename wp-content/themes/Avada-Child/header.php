@@ -125,9 +125,4 @@ $wrapper_class .= (is_page_template('blank.php')) ? ' wrapper_blank' : '';
         do_action('avada_before_main_container');
         ?>
         <main id="main" class="clearfix <?php echo esc_attr($main_class); ?>">
-            <?php if(is_single()): ?>
-                <div class="fusion-row" style="max-width: 100%;">
-            <?php else: ?>
                 <div class="fusion-row" style="<?php echo esc_attr($row_css); ?>">
-            <?php endif; ?>
-
