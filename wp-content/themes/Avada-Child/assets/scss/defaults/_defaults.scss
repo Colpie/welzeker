@@ -13,6 +13,8 @@ body {
   -webkit-font-smoothing: antialiased !important;
   font-family: $font !important;
   font-size: 20px !important;
+
+  color: $text-color !important;
 }
 
 #boxed-wrapper {
@@ -21,6 +23,8 @@ body {
     -webkit-font-smoothing: antialiased !important;
     font-family: $font !important;
     font-size: 18px !important;
+
+    color: $text-color !important;
   }
 
   b, strong {

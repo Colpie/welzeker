@@ -5587,6 +5587,90 @@ div.image-cropper > img {
   align-items: center;
   justify-content: center;
 }
+#boxed-wrapper .reviews-swiper {
+  max-width: 100%;
+}
+#boxed-wrapper .reviews-swiper .swiper-buttons {
+  flex-direction: row-reverse;
+  float: left;
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  z-index: 999;
+  right: 0;
+  gap: 5px;
+}
+@media (max-width: 767px) {
+  #boxed-wrapper .reviews-swiper .swiper-buttons {
+    left: 0;
+    right: auto;
+    top: 30px;
+  }
+}
+#boxed-wrapper .reviews-swiper .swiper-buttons .swiper-button-next,
+#boxed-wrapper .reviews-swiper .swiper-buttons .swiper-button-prev {
+  position: relative;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  color: #817573 !important;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid #817573;
+}
+#boxed-wrapper .reviews-swiper .swiper-buttons .swiper-button-next:after,
+#boxed-wrapper .reviews-swiper .swiper-buttons .swiper-button-prev:after {
+  content: "\f061";
+  font-size: 14px !important;
+  font-family: "Font Awesome 5 Pro" !important;
+  font-style: normal !important;
+}
+#boxed-wrapper .reviews-swiper .swiper-buttons .swiper-button-prev:after {
+  transform: scaleX(-1);
+}
+#boxed-wrapper .reviews-swiper .review {
+  border-radius: 12px;
+}
+@media (max-width: 767px) {
+  #boxed-wrapper .reviews-swiper .review {
+    height: auto !important;
+    padding: 0 !important;
+  }
+}
+#boxed-wrapper .reviews-swiper .review.swiper-slide-active {
+  opacity: 1;
+}
+#boxed-wrapper .reviews-swiper .review .review-wrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
+#boxed-wrapper .reviews-swiper .review .review-wrapper .quote {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#boxed-wrapper .reviews-swiper .review .review-wrapper .quote img {
+  width: 35px;
+  height: 120px;
+  object-fit: contain;
+}
+#boxed-wrapper .reviews-swiper .review .review-wrapper .review-content {
+  text-align: left;
+}
+#boxed-wrapper .reviews-swiper .review .review-wrapper .review-name {
+  text-align: left;
+}
+#boxed-wrapper .reviews-swiper .review .review-wrapper .review-name p {
+  font-size: 14px !important;
+}
+
 #boxed-wrapper .side-menu {
   position: fixed;
   right: 0;
@@ -5931,12 +6015,14 @@ body {
   -webkit-font-smoothing: antialiased !important;
   font-family: "Figtree", sans-serif !important;
   font-size: 20px !important;
+  color: #4B4B4B !important;
 }
 
 #boxed-wrapper p, #boxed-wrapper th, #boxed-wrapper td, #boxed-wrapper li {
   -webkit-font-smoothing: antialiased !important;
   font-family: "Figtree", sans-serif !important;
   font-size: 18px !important;
+  color: #4B4B4B !important;
 }
 #boxed-wrapper b, #boxed-wrapper strong {
   font-weight: 700 !important;
@@ -6350,6 +6436,18 @@ body {
 #boxed-wrapper .fusion-text a {
   color: #C4D600 !important;
   text-decoration: underline !important;
+}
+#boxed-wrapper .min-400 {
+  width: 100%;
+}
+#boxed-wrapper .min-400 img {
+  width: 100%;
+  object-fit: cover;
+}
+@media (min-width: 1025px) {
+  #boxed-wrapper .min-400 img {
+    height: 400px;
+  }
 }
 
 #boxed-wrapper .brown-after .fusion-column-wrapper:after {

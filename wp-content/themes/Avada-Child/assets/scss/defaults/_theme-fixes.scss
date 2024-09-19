@@ -118,4 +118,17 @@
       text-decoration: underline !important;
     }
   }
+
+  .min-400 {
+    width: 100%;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      
+      @media (min-width: 1025px) {
+        height: 400px;
+      }
+    }
+  }
 }
