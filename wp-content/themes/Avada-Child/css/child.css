@@ -6399,6 +6399,7 @@ body {
 @media (min-width: 1025px) {
   #boxed-wrapper .static-image-column.custom-static-right {
     height: calc(100% + 190px);
+    top: -50px;
   }
 }
 @media (min-width: 1025px) {
