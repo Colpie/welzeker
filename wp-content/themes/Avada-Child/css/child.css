@@ -5501,8 +5501,12 @@ div.image-cropper > img {
   }
 }
 #boxed-wrapper .latest-news-item {
-  padding-right: 30px !important;
   margin-bottom: 45px;
+}
+@media (min-width: 641px) {
+  #boxed-wrapper .latest-news-item {
+    padding-right: 45px !important;
+  }
 }
 #boxed-wrapper .latest-news-item .card {
   border: 0 !important;
@@ -6309,6 +6313,31 @@ body {
   #boxed-wrapper .static-image-column .fusion-column-wrapper .fusion-image-element .fusion-imageframe img {
     border-radius: 90px 90px 0 0;
   }
+}
+@media (min-width: 1025px) {
+  #boxed-wrapper .static-image-column-left {
+    position: absolute;
+    left: 0;
+    top: -60px;
+    width: 40%;
+    height: calc(100% + 60px);
+  }
+}
+#boxed-wrapper .static-image-column-left .fusion-column-wrapper {
+  height: 100%;
+}
+#boxed-wrapper .static-image-column-left .fusion-column-wrapper .fusion-image-element {
+  height: 100%;
+}
+#boxed-wrapper .static-image-column-left .fusion-column-wrapper .fusion-image-element .fusion-imageframe {
+  height: 100%;
+  width: 100%;
+}
+#boxed-wrapper .static-image-column-left .fusion-column-wrapper .fusion-image-element .fusion-imageframe img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0 90px 0 0;
 }
 @media (max-width: 1024px) {
   #boxed-wrapper .flex-reverse .fusion-builder-row {

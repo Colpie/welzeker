@@ -67,6 +67,39 @@
     }
   }
 
+  .static-image-column-left {
+
+    @media (min-width: 1025px) {
+      position: absolute;
+      left: 0;
+      top: -60px;
+
+      width: 40%;
+      height: calc(100% + 60px);
+    }
+
+    .fusion-column-wrapper {
+      height: 100%;
+
+      .fusion-image-element {
+        height: 100%;
+
+        .fusion-imageframe {
+          height: 100%;
+          width: 100%;
+
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+
+            border-radius: 0 90px 0 0;
+          }
+        }
+      }
+    }
+  }
+
 
   .flex-reverse {
 

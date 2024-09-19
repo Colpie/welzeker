@@ -18,8 +18,11 @@
   }
 
   .latest-news-item {
-    padding-right: 30px !important;
     margin-bottom: 45px;
+
+    @media (min-width: 641px) {
+      padding-right: 45px !important;
+    }
 
     .card {
       border: 0 !important;

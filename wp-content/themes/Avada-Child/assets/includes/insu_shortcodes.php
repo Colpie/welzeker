@@ -73,7 +73,7 @@ function print_latest_news_item()
 {
     global $post;
     $args = array(
-        'posts_per_page' => 3,
+        'posts_per_page' => 2,
         'offset' => 0,
         'orderby' => 'post_date',
         'order' => 'DESC',
@@ -87,7 +87,7 @@ function print_latest_news_item()
         while ($the_query->have_posts()) :
             $the_query->the_post(); ?>
 
-            <div class="latest-news-item col-lg-4 col-md-4 col-sm-12">
+            <div class="latest-news-item col-lg-6 col-md-6 col-sm-12">
                 <div class="card">
                     <a href="<?php print get_the_permalink($post->ID) ?>">
                         <div class="card-block">
