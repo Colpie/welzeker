@@ -6493,6 +6493,16 @@ body {
 #boxed-wrapper .brown-after .cta-column .fusion-column-wrapper:after {
   display: none !important;
 }
+@media (max-width: 640px) {
+  #boxed-wrapper .brown-after .custom-brown-after:before {
+    content: "";
+    background: #817573;
+    width: 500%;
+    right: calc(100% - var(--awb-spacing-left));
+    top: 0;
+    position: absolute;
+  }
+}
 @media (max-width: 1024px) {
   #boxed-wrapper .brown-background-small {
     background: #817573 !important;

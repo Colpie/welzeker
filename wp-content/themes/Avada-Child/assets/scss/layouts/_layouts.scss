@@ -27,6 +27,22 @@
         }
       }
     }
+
+    .custom-brown-after {
+
+      @media (max-width: 640px) {
+
+        &:before {
+          content: '';
+          background: $brown;
+          width: 500%;
+
+          right: calc(100% - var(--awb-spacing-left));
+          top: 0;
+          position: absolute;
+        }
+      }
+    }
   }
 
   .brown-background-small {
