@@ -17,8 +17,7 @@
         top: 0;
 
         @media (min-width: 1025px) {
-          left: calc(100% - 15px);
-
+          left: calc(100% - var(--awb-spacing-right));
         }
       }
     }

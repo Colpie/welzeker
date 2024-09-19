@@ -65,6 +65,13 @@
         }
       }
     }
+
+    &.custom-static-right {
+
+      @media (min-width: 1025px) {
+        height: calc(100% + 190px);
+      }
+    }
   }
 
   .static-image-column-left {
@@ -96,6 +103,19 @@
             border-radius: 0 90px 0 0;
           }
         }
+      }
+    }
+
+    &.custom-static-left {
+
+      @media (min-width: 1025px) {
+        width: 55%;
+        top: -120px;
+        height: calc(100% + 120px);
+      }
+
+      .fusion-column-wrapper {
+        margin-left: 0 !important;
       }
     }
   }
@@ -135,7 +155,7 @@
   .mr-lg-0 {
 
     .fusion-column-wrapper {
-      
+
       @media (min-width: 1025px) {
         margin-right: 0 !important;
       }
