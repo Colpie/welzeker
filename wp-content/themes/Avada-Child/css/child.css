@@ -6476,7 +6476,8 @@ body {
 }
 @media (max-width: 1024px) {
   #boxed-wrapper .border-radius-top-right-0 {
-    border-radius: 0 0 90px 90px;
+    border-radius: 0 0 90px 90px !important;
+    --awb-border-radius: 0 0 90px 90px !important;
   }
 }
 
