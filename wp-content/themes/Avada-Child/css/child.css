@@ -5600,13 +5600,6 @@ div.image-cropper > img {
   right: 0;
   gap: 5px;
 }
-@media (max-width: 767px) {
-  #boxed-wrapper .reviews-swiper .swiper-buttons {
-    left: 0;
-    right: auto;
-    top: 30px;
-  }
-}
 #boxed-wrapper .reviews-swiper .swiper-buttons .swiper-button-next,
 #boxed-wrapper .reviews-swiper .swiper-buttons .swiper-button-prev {
   position: relative;
