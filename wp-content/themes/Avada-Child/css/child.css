@@ -6439,9 +6439,9 @@ body {
     top: -120px;
     height: calc(100% + 120px);
   }
-}
-#boxed-wrapper .static-image-column-left.custom-static-left .fusion-column-wrapper {
-  margin-left: 0 !important;
+  #boxed-wrapper .static-image-column-left.custom-static-left .fusion-column-wrapper {
+    margin-left: 0 !important;
+  }
 }
 @media (max-width: 1024px) {
   #boxed-wrapper .flex-reverse .fusion-builder-row {
