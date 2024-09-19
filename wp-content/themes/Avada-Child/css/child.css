@@ -6402,6 +6402,9 @@ body {
     top: -50px;
   }
 }
+#boxed-wrapper .static-image-column.custom-static-right .fusion-image-element .fusion-imageframe img {
+  border-radius: 0 0 0 0;
+}
 @media (min-width: 1025px) {
   #boxed-wrapper .static-image-column-left {
     position: absolute;

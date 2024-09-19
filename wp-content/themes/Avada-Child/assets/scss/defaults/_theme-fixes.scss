@@ -72,6 +72,16 @@
         height: calc(100% + 190px);
         top: -50px;
       }
+
+      .fusion-image-element {
+
+        .fusion-imageframe {
+          
+          img {
+            border-radius: 0 0 0 0;
+          }
+        }
+      }
     }
   }
 
