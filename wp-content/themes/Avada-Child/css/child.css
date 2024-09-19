@@ -6487,13 +6487,8 @@ body {
   height: 100%;
   width: 500%;
   position: absolute;
-  left: 100%;
+  left: calc(100% - var(--awb-spacing-right));
   top: 0;
-}
-@media (min-width: 1025px) {
-  #boxed-wrapper .brown-after .fusion-column-wrapper:after {
-    left: calc(100% - var(--awb-spacing-right));
-  }
 }
 #boxed-wrapper .brown-after .cta-column .fusion-column-wrapper:after {
   display: none !important;
