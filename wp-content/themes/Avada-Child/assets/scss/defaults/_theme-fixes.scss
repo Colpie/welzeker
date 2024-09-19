@@ -125,9 +125,19 @@
     img {
       width: 100%;
       object-fit: cover;
-      
+
       @media (min-width: 1025px) {
         height: 400px;
+      }
+    }
+  }
+
+  .mr-lg-0 {
+
+    .fusion-column-wrapper {
+      
+      @media (min-width: 1025px) {
+        margin-right: 0 !important;
       }
     }
   }
