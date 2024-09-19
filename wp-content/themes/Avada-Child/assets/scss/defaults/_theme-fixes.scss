@@ -149,6 +149,10 @@
       @media (min-width: 1025px) {
         height: 400px;
       }
+
+      @media (max-width: 1024px) {
+        border-radius: 90px 90px 0 0;
+      }
     }
   }
 
@@ -159,6 +163,13 @@
       @media (min-width: 1025px) {
         margin-right: 0 !important;
       }
+    }
+  }
+
+  .border-radius-top-right-0 {
+
+    @media (max-width: 1024px) {
+      border-radius: 0 0 90px 90px;
     }
   }
 }

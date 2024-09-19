@@ -6464,9 +6464,19 @@ body {
     height: 400px;
   }
 }
+@media (max-width: 1024px) {
+  #boxed-wrapper .min-400 img {
+    border-radius: 90px 90px 0 0;
+  }
+}
 @media (min-width: 1025px) {
   #boxed-wrapper .mr-lg-0 .fusion-column-wrapper {
     margin-right: 0 !important;
+  }
+}
+@media (max-width: 1024px) {
+  #boxed-wrapper .border-radius-top-right-0 {
+    border-radius: 0 0 90px 90px;
   }
 }
 
