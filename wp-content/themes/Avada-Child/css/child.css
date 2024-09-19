@@ -6494,7 +6494,7 @@ body {
   display: none !important;
 }
 @media (max-width: 640px) {
-  #boxed-wrapper .brown-after .custom-brown-after:before {
+  #boxed-wrapper .brown-after.custom-brown-after:before {
     content: "";
     background: #817573;
     width: 500%;
