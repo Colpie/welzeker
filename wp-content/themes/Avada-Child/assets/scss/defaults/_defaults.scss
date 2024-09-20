@@ -92,6 +92,11 @@ body {
       &.brown-button {
         background: $brown !important;
       }
+
+      &.loadmore {
+        padding: 5px 15px !important;
+        background: $brown !important;
+      }
     }
   }
 

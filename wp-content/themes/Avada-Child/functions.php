@@ -14,6 +14,12 @@ function theme_enqueue_styles()
     wp_enqueue_script('scrollspy', get_stylesheet_directory_uri() . '/assets/js/scrollspy.js', array(), '1.0.0', true);
     wp_enqueue_script('splitting-script', get_stylesheet_directory_uri() . '/assets/js/splitting.js', array(), '1.0.0', true);
 
+    // Localize the script with new data
+    $script_data_array = array(
+        'ajaxurl' => admin_url('admin-ajax.php'),
+    );
+    wp_localize_script('child-script', 'blog', $script_data_array);
+
     // Import WOW
     wp_enqueue_script('wow', get_stylesheet_directory_uri() . '/assets/js/wow.min.js', array('jquery'));
 
@@ -108,3 +114,52 @@ function custom_login_page_background() {
     </style>';
 }
 add_action('login_enqueue_scripts', 'custom_login_page_background');
+
+function load_posts_by_ajax_blog() {
+    global $post;
+    $paged = $_POST['page'];
+    $args = array(
+        'posts_per_page' => 6,
+        'orderby' => 'post_date',
+        'order' => 'DESC',
+        'post_type' => 'insunews',
+        'post_status' => 'publish',
+        'paged' => $paged,
+    );
+    $blog_posts = new WP_Query( $args ); ?>
+    <?php  if ($blog_posts->have_posts()) :
+        while ($blog_posts->have_posts()) :
+            $blog_posts->the_post();?>
+            <div class="latest-news-item col-lg-4 col-md-4 col-sm-12 wow fadeInUp animated">
+                <div class="card">
+                    <a href="<?php print get_the_permalink($post->ID) ?>">
+                        <div class="card-block">
+                            <div class="title">
+                                <span class="date"><?php echo get_the_date('d/m'); ?></span>
+                                <h3 class="accent">
+                                    <?php print the_title() ?>
+                                </h3>
+                            </div>
+                            <div class="excerpt">
+                                <?php
+                                $excerpt = get_the_excerpt($post->ID);
+                                $trimmed_excerpt = wp_trim_words($excerpt, 25);
+                                echo $trimmed_excerpt;
+                                ?>
+
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="fusion-button"
+                                  href="<?php print get_the_permalink($post->ID) ?>"><?php print __('Lees meer'); ?></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        <?php
+        endwhile;
+    endif;
+    wp_die();
+}
+add_action('wp_ajax_load_posts_by_ajax', 'load_posts_by_ajax_blog');
+add_action('wp_ajax_nopriv_load_posts_by_ajax', 'load_posts_by_ajax_blog');

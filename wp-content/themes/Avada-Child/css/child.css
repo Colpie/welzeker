@@ -5507,11 +5507,6 @@ div.image-cropper > img {
     margin-bottom: 90px;
   }
 }
-@media (max-width: 1024px) {
-  #boxed-wrapper .news-row-overview .latest-news-item:last-child {
-    margin-bottom: 0;
-  }
-}
 #boxed-wrapper .latest-news-item {
   margin-bottom: 45px;
 }
@@ -6078,6 +6073,10 @@ body {
   font-weight: 500 !important;
 }
 #boxed-wrapper a.fusion-button.brown-button {
+  background: #817573 !important;
+}
+#boxed-wrapper a.fusion-button.loadmore {
+  padding: 5px 15px !important;
   background: #817573 !important;
 }
 #boxed-wrapper .wpcf7-submit:focus {

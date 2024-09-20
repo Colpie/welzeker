@@ -174,8 +174,9 @@ function print_all_news_item()
                 </div>
             </div>
         <?php endwhile;
-//        echo ' <div class="col-md-12 archive-button"><a class="fusion-button light-green" href="/nuttige-info/nieuws-archief/">Alle nieuwsberichten</a></div>';
         echo '</div>';
+        echo '<div class="load-more"><a class="fusion-button loadmore">Meer nieuws</a> </div>';
+        echo '<span class="no-more-post"></span>';
         wp_reset_postdata();
         return ob_get_clean();
     endif;

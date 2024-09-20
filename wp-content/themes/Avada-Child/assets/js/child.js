@@ -148,6 +148,25 @@
             $(this).attr('title', $(this).data('title'));
         });
 
+        var page = 2;
+        jQuery(function ($) {
+            jQuery('body').on('click', '.loadmore', function () {
+                var data = {
+                    'action': 'load_posts_by_ajax',
+                    'page': page,
+                };
+                jQuery.post(blog.ajaxurl, data, function (response) {
+                    if ($.trim(response) != '') {
+                        jQuery('.news-row-overview').append(response);
+                        page++;
+                    } else {
+                        jQuery('.loadmore').hide();
+                        jQuery(".no-more-post").html("Geen verdere weetjes beschikbaar");
+                    }
+                });
+            });
+        });
+
         // Mobile menu
         $('.fusion-flyout-menu-toggle').on('click', function (e) {
             e.preventDefault();
