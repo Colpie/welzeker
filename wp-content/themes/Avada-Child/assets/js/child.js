@@ -61,18 +61,22 @@
 
 
         const swiper = new Swiper('.partners-swiper', {
-            slidesPerView: 3,
-            spaceBetween: 0,
+            slidesPerView: 6,
+            spaceBetween: 30,
             direction: 'horizontal',
 
             loop: true,
-            speed: 5000,
-            autoplay: true,
-
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+            speed: 800,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
             },
+
+            freeMode: true,
+            freeModeMomentum: false,
+            freeModeMomentumBounce: false,
+
+            freeModeSticky: true,
 
             breakpoints: {
                 0: {
@@ -83,12 +87,13 @@
                     slidesPerView: 3
                 },
                 1024: {
-                    slidesPerView: 6,
+                    slidesPerView: 6
                 },
                 1440: {
-                    slidesPerView: 6,
+                    slidesPerView: 8
                 }
             }
+
         });
 
         function setEqualHeight() {

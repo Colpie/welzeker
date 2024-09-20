@@ -5580,6 +5580,11 @@ div.image-cropper > img {
   max-width: 100%;
   margin-top: 45px;
 }
+#boxed-wrapper .partners-swiper .partners-wrapper {
+  display: flex;
+  width: fit-content;
+  animation: scroll 90s linear infinite;
+}
 #boxed-wrapper .swiper-slide {
   display: flex;
   align-items: center;
@@ -5590,6 +5595,14 @@ div.image-cropper > img {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 #boxed-wrapper .reviews-swiper {
   max-width: 100%;
