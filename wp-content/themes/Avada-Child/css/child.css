@@ -4993,6 +4993,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 #boxed-wrapper .banner-row .fusion-builder-row .fusion-layout-column .fusion-column-wrapper .fusion-image-element .fusion-imageframe.center-bottom img {
   object-position: center bottom !important;
 }
+#boxed-wrapper .banner-row .fusion-builder-row .fusion-layout-column .fusion-column-wrapper .fusion-image-element .fusion-imageframe.center-35 img {
+  object-position: center 35% !important;
+}
 #boxed-wrapper .banner-row .fusion-builder-row .fusion-layout-column .fusion-column-wrapper .fusion-image-element .fusion-imageframe img {
   height: 100%;
   width: 100%;
