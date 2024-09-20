@@ -5723,10 +5723,15 @@ div.image-cropper > img {
     gap: 5px;
   }
 }
+#boxed-wrapper .side-menu .side-menu-wrapper .side-menu-content .side-menu-content-item a:hover img {
+  transform: rotateX(360deg);
+}
 #boxed-wrapper .side-menu .side-menu-wrapper .side-menu-content .side-menu-content-item a img {
   width: 40px;
   height: 40px;
   object-fit: contain;
+  transition: all 0.9s ease-in-out;
+  -webkit-transition: all 0.9s ease-in-out;
 }
 @media (max-width: 1024px) {
   #boxed-wrapper .side-menu .side-menu-wrapper .side-menu-content .side-menu-content-item a img {

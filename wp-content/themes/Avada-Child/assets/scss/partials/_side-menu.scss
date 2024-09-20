@@ -56,10 +56,20 @@
               gap: 5px;
             }
 
+            &:hover {
+
+              img {
+                transform: rotateX(360deg);
+              }
+            }
+
             img {
               width: 40px;
               height: 40px;
               object-fit: contain;
+
+              transition: all .9s ease-in-out;
+              -webkit-transition: all .9s ease-in-out;
 
               @media (max-width: 1024px) {
                 height: 25px;
