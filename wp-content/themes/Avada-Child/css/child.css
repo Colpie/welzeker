@@ -5111,6 +5111,9 @@ div.image-cropper > img {
   align-items: center;
   text-align: center;
 }
+#boxed-wrapper .custom-main-menu .custom-main-menu-wrapper .custom-menu-item a:hover {
+  color: #d6cac7 !important;
+}
 @media (max-width: 992px) {
   #boxed-wrapper .custom-main-menu .custom-main-menu-wrapper .custom-menu-item a {
     font-size: 16px !important;
