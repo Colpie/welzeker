@@ -5004,17 +5004,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   object-position: center center;
 }
 
-.image-cropper {
-  width: 150px;
-  height: 150px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-div.image-cropper > img {
-  height: 100%;
-  object-fit: cover;
+#boxed-wrapper .fusion-text ul {
+  padding-left: 20px !important;
 }
 
 @media (max-width: 1024px) {

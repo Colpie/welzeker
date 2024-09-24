@@ -1,12 +1,9 @@
-.image-cropper {
-  width: 150px;
-  height: 150px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 50%;
-}
+#boxed-wrapper {
 
-div.image-cropper > img {
-  height: 100%;
-  object-fit: cover
+  .fusion-text {
+
+    ul {
+      padding-left: 20px !important;
+    }
+  }
 }
