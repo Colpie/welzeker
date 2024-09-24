@@ -5007,6 +5007,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 #boxed-wrapper .fusion-text ul {
   padding-left: 20px !important;
 }
+@media (max-width: 640px) {
+  #boxed-wrapper .fusion-text.tools a {
+    width: 100%;
+    display: block;
+  }
+}
 
 @media (max-width: 1024px) {
   #boxed-wrapper .cta-column {

@@ -5,5 +5,16 @@
     ul {
       padding-left: 20px !important;
     }
+
+    &.tools {
+
+      @media (max-width: 640px) {
+
+        a {
+          width: 100%;
+          display: block;
+        }
+      }
+    }
   }
 }
