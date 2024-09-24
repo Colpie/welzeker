@@ -6124,7 +6124,7 @@ body {
 }
 @media (max-width: 500px) {
   #boxed-wrapper h1 {
-    font-size: 90% !important;
+    font-size: 32px !important;
   }
 }
 #boxed-wrapper h1 p {
@@ -6136,7 +6136,7 @@ body {
 }
 @media (max-width: 500px) {
   #boxed-wrapper h1 p {
-    font-size: 90% !important;
+    font-size: 32px !important;
   }
 }
 #boxed-wrapper h2 {
