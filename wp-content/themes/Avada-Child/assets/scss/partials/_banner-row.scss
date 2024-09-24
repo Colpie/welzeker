@@ -13,6 +13,10 @@
       height: auto;
     }
 
+    @media (max-width: 640px) {
+      margin-top: 30px;
+    }
+
     .fusion-builder-row {
       max-width: 1350px !important;
 

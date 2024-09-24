@@ -4968,6 +4968,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     height: auto;
   }
 }
+@media (max-width: 640px) {
+  #boxed-wrapper .banner-row {
+    margin-top: 30px;
+  }
+}
 #boxed-wrapper .banner-row .fusion-builder-row {
   max-width: 1350px !important;
 }
