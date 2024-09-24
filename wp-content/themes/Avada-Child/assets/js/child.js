@@ -1,6 +1,18 @@
 (function ($) {
     $(document).ready(function () {
 
+        function setMinHeight() {
+            var wrapperHeight = $('.height-check-column .fusion-column-wrapper').outerHeight();
+
+            $('.height-check-column').css('min-height', wrapperHeight + 'px');
+        }
+
+        setMinHeight();
+
+        $(window).resize(function() {
+            setMinHeight();
+        });
+
         setTimeout(function () {
             $('.side-menu').addClass("loaded");
         }, 800);

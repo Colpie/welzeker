@@ -5675,7 +5675,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   display: flex;
   position: relative;
   flex-direction: column;
-  justify-content: space-between;
   height: 100%;
   padding-top: 60px;
   padding-bottom: 30px;
