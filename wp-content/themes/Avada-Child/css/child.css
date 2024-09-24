@@ -5783,7 +5783,7 @@ div.image-cropper > img {
 }
 @media (max-width: 640px) {
   .single #boxed-wrapper #content {
-    margin-bottom: 45px !important;
+    margin-bottom: 60px !important;
   }
 }
 .single #boxed-wrapper article {
