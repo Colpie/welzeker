@@ -5995,7 +5995,7 @@ div.image-cropper > img {
 }
 @media (max-width: 500px) {
   #boxed-wrapper .panel-group .fusion-panel .panel-heading h4 a {
-    font-size: 95% !important;
+    font-size: 22px !important;
   }
 }
 #boxed-wrapper .panel-group .fusion-panel .panel-heading h4 a:before {
