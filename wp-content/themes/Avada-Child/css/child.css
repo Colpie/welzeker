@@ -6105,6 +6105,11 @@ body {
   font-size: 18px !important;
   font-weight: 500 !important;
 }
+@media (max-width: 640px) {
+  #boxed-wrapper a.fusion-button .fusion-button-text {
+    font-size: 16px !important;
+  }
+}
 #boxed-wrapper a.fusion-button.brown-button {
   background: #817573 !important;
 }

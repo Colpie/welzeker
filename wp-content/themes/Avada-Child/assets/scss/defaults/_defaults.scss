@@ -91,6 +91,10 @@ body {
         text-transform: none !important;
         font-size: 18px !important;
         font-weight: 500 !important;
+
+        @media (max-width: 640px) {
+          font-size: 16px !important;
+        }
       }
 
       &.brown-button {
