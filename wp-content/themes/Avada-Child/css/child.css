@@ -5208,6 +5208,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   gap: 0;
   justify-content: flex-end;
   padding-right: 60px;
+  flex-direction: column;
 }
 @media (max-width: 1200px) {
   #boxed-wrapper .custom-footer .fusion-row .footer-column.footer-right-column .footer-inner-column {
@@ -5260,6 +5261,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   bottom: 0;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
+}
+@media (min-width: 1201px) {
+  #boxed-wrapper .custom-footer .fusion-row .footer-column.footer-right-column .footer-inner-column .legal-info {
+    text-align: right;
+  }
+}
+#boxed-wrapper .custom-footer .fusion-row .footer-column.footer-right-column .footer-inner-column .legal-info p {
+  color: #817573 !important;
+  font-size: 14px !important;
+  margin-bottom: 0 !important;
 }
 #boxed-wrapper .custom-footer .fusion-row .footer-column .footer-inner-column {
   display: flex;

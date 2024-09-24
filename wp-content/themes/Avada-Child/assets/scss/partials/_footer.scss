@@ -75,6 +75,8 @@
             justify-content: flex-end;
             padding-right: 60px;
 
+            flex-direction: column;
+
             @media (max-width: 1200px) {
               justify-content: flex-start;
               padding-right: 0;
@@ -140,6 +142,19 @@
                     -webkit-transition: all .3s ease-in-out;
                   }
                 }
+              }
+            }
+
+            .legal-info {
+
+              @media (min-width: 1201px) {
+                text-align: right;
+              }
+
+              p {
+                color: $brown !important;
+                font-size: 14px !important;
+                margin-bottom: 0 !important;
               }
             }
           }
