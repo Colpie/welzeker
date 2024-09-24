@@ -73,10 +73,11 @@
 
         @media (max-width: 1024px) {
           opacity: 1 !important;
-          height: 50%;
           top: auto;
+          position: relative;
+          padding: 30px 0 0;
 
-          bottom: 0;
+          background: transparent;
         }
 
         h4 {

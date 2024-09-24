@@ -5929,9 +5929,10 @@ div.image-cropper > img {
 @media (max-width: 1024px) {
   #boxed-wrapper .team-column .fusion-column-wrapper .fusion-text {
     opacity: 1 !important;
-    height: 50%;
     top: auto;
-    bottom: 0;
+    position: relative;
+    padding: 30px 0 0;
+    background: transparent;
   }
 }
 #boxed-wrapper .team-column .fusion-column-wrapper .fusion-text h4 {
