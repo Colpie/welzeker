@@ -184,4 +184,18 @@
       --awb-border-radius: 0 0 90px 90px !important;
     }
   }
+
+  .border-radius-xs {
+
+
+    @media (max-width: 640px) {
+      border-radius: 0 90px 90px 90px !important;
+      -awb-border-radius: 0 90px 90px 90px !important;
+
+      .fusion-column-wrapper {
+        border-radius: 0 90px 90px 90px !important;
+        -awb-border-radius: 0 90px 90px 90px !important;
+      }
+    }
+  }
 }

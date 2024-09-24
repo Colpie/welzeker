@@ -6548,6 +6548,16 @@ body {
     --awb-border-radius: 0 0 90px 90px !important;
   }
 }
+@media (max-width: 640px) {
+  #boxed-wrapper .border-radius-xs {
+    border-radius: 0 90px 90px 90px !important;
+    -awb-border-radius: 0 90px 90px 90px !important;
+  }
+  #boxed-wrapper .border-radius-xs .fusion-column-wrapper {
+    border-radius: 0 90px 90px 90px !important;
+    -awb-border-radius: 0 90px 90px 90px !important;
+  }
+}
 
 #boxed-wrapper .brown-after .fusion-column-wrapper:after {
   content: "";
