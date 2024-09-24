@@ -6583,6 +6583,14 @@ body {
     -awb-border-radius: 0 90px 90px 90px !important;
   }
 }
+#boxed-wrapper .lg-hide {
+  display: none !important;
+}
+@media (max-width: 1125px) {
+  #boxed-wrapper .lg-hide {
+    display: flex !important;
+  }
+}
 
 #boxed-wrapper .brown-after .fusion-column-wrapper:after {
   content: "";

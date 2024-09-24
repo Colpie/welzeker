@@ -201,7 +201,9 @@
 
   .lg-hide {
     display: none !important;
-    
-    @media (max-width: 1125px);
+
+    @media (max-width: 1125px) {
+      display: flex !important;
+    }
   }
 }
