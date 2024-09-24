@@ -5783,7 +5783,7 @@ div.image-cropper > img {
 }
 @media (max-width: 640px) {
   .single #boxed-wrapper #content {
-    margin-bottom: 90px !important;
+    margin-bottom: 45px !important;
   }
 }
 .single #boxed-wrapper article {
@@ -5805,6 +5805,7 @@ div.image-cropper > img {
 @media (max-width: 640px) {
   .single #boxed-wrapper article .post-content {
     margin-bottom: 25px !important;
+    margin-top: 60px !important;
   }
 }
 .single #boxed-wrapper article .post-content h1 {
@@ -5818,6 +5819,11 @@ div.image-cropper > img {
 .single #boxed-wrapper article .post-content h2, .single #boxed-wrapper article .post-content h3, .single #boxed-wrapper article .post-content h4 {
   font-size: 28px !important;
   margin: 10px 0 15px !important;
+}
+@media (max-width: 640px) {
+  .single #boxed-wrapper article .post-content h2, .single #boxed-wrapper article .post-content h3, .single #boxed-wrapper article .post-content h4 {
+    font-size: 22px !important;
+  }
 }
 .single #boxed-wrapper article .post-content .fusion-button {
   margin-top: 40px;
