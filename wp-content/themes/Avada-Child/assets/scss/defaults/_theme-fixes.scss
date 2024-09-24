@@ -198,4 +198,10 @@
       }
     }
   }
+
+  .lg-hide {
+    display: none !important;
+    
+    @media (max-width: 1125px);
+  }
 }
