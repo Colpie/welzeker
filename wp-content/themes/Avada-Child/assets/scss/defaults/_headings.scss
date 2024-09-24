@@ -55,6 +55,10 @@
     font-size: 28px !important;
     line-height: 1.2 !important;
 
+    @media (max-width: 640px) {
+      font-size: 22px !important;
+    }
+
     p {
       font-family: $heading !important;
       font-weight: 700 !important;
@@ -63,6 +67,9 @@
       font-size: 28px !important;
       line-height: 1.2 !important;
 
+      @media (max-width: 640px) {
+        font-size: 22px !important;
+      }
     }
   }
 

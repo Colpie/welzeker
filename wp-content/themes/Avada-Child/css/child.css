@@ -6154,12 +6154,22 @@ body {
   font-size: 28px !important;
   line-height: 1.2 !important;
 }
+@media (max-width: 640px) {
+  #boxed-wrapper h3 {
+    font-size: 22px !important;
+  }
+}
 #boxed-wrapper h3 p {
   font-family: "eurostile", sans-serif !important;
   font-weight: 700 !important;
   color: #817573 !important;
   font-size: 28px !important;
   line-height: 1.2 !important;
+}
+@media (max-width: 640px) {
+  #boxed-wrapper h3 p {
+    font-size: 22px !important;
+  }
 }
 #boxed-wrapper h4 {
   font-family: "eurostile", sans-serif !important;
