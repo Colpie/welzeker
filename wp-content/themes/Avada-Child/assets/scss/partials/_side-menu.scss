@@ -9,6 +9,10 @@
     transform: translateX(100%);
     transition: all .5s linear;
 
+    @media (max-width: 640px) {
+      display: none !important;
+    }
+
     &.loaded {
       transform: translateX(0);
     }
