@@ -37,13 +37,13 @@ $c_page_id = Avada()->fusion_library->get_page_id();
             </div>
             <div class="col-lg-5 col-md-9 col-9 footer-column footer-right-column">
                 <div class="footer-inner-column">
+                    <span class="legal-info">
+                         <p><?php echo get_option('insusite_office_name'); ?> | <?php echo get_option('insusite_ondernemingsnummer') ?></p>
+                     </span>
                     <?php
                     $footer_menu = wp_nav_menu(array('menu' => 'footer-menu'));
                     echo $footer_menu;
                     ?>
-                    <span class="legal-info">
-                         <p><?php echo get_option('insusite_office_name'); ?> | <?php echo get_option('insusite_ondernemingsnummer') ?></p>
-                     </span>
                 </div>
             </div>
         </div> <!-- fusion-row -->
