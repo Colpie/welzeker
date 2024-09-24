@@ -289,6 +289,15 @@
 
 
         // Animations
+        $('.cta-column').hover(
+            function () {
+                $(this).addClass('cta-hover');  // mouse enters
+            },
+            function () {
+                $(this).removeClass('cta-hover');  // mouse leaves
+            }
+        );
+
 
         var t = 0.2;
         $('.delay').each(function (i) {

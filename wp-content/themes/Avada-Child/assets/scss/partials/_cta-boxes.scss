@@ -33,6 +33,32 @@
           }
         }
       }
+
+      &.cta-hover {
+
+        .fusion-column-wrapper {
+
+          .fusion-text {
+
+            p, a {
+              color: #d6cac7 !important;
+            }
+          }
+        }
+      }
+    }
+
+    &.cta-hover {
+
+      .fusion-column-wrapper {
+
+        .fusion-text {
+
+          p, a {
+            color: #d6cac7 !important;
+          }
+        }
+      }
     }
 
     .fusion-column-wrapper {
@@ -51,6 +77,9 @@
           color: $white !important;
           font-size: 14px !important;
           font-weight: 500 !important;
+
+          transition: all .3s ease-in-out;
+          -webkit-transition: all .3s ease-in-out;
 
           &:last-child {
             margin-bottom: 0 !important;
