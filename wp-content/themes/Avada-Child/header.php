@@ -45,7 +45,15 @@ if (!defined('ABSPATH')) {
 
     <?php $cookie_statistic = isset($_COOKIE["statistic_cookies"]) ? $_COOKIE['statistic_cookies'] : 'new'; ?>
     <?php if ($cookie_statistic == 'agreed'): ?>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZYT3VSGCY"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
+            gtag('config', 'G-NZYT3VSGCY');
+        </script>
     <?php endif; ?>
 </head>
 
