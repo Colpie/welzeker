@@ -42,7 +42,9 @@ function get_openings()
         <img src="/wp-content/themes/Avada-Child/assets/images/icons/icon_clock.png">
         <span>
                 <?php print __('vandaag:'); ?> <?php if ($vm && $nm) {
-                print $vm ?> & <?php print $nm;
+                print $vm ?> & <?php print $nm; ?>
+                <br>In de namiddag telefonisch en op afspraak
+                <?php
             } else {
                 print __('gesloten');
             } ?>

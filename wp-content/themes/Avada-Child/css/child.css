@@ -5425,6 +5425,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   font-weight: 600 !important;
   margin-top: 41px;
   font-size: 16px !important;
+  flex-wrap: wrap;
 }
 @media (max-width: 992px) {
   #boxed-wrapper header .fusion-header .fusion-row .menu-section .opening-hours {
@@ -5440,6 +5441,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   width: 30px;
   height: 30px;
   object-fit: contain;
+}
+#boxed-wrapper header .fusion-header .fusion-row .menu-section .opening-hours .text-right {
+  text-align: right;
 }
 @media (min-width: 1126px) {
   #boxed-wrapper .fusion-menu-header {
