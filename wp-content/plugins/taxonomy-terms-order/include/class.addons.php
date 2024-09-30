@@ -97,4 +97,7 @@
                     return TRUE;
                     
                 }
-        } 
+        }
+        
+        
+    new TTO_addons(); 
