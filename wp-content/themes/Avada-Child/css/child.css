@@ -5344,11 +5344,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   display: flex;
   flex-wrap: wrap;
 }
-@media (max-width: 992px) {
-  #boxed-wrapper header .fusion-header .fusion-row {
-    flex-direction: column;
-  }
-}
 #boxed-wrapper header .fusion-header .fusion-row .logo-section {
   display: flex;
   gap: 30px;
@@ -5356,12 +5351,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 @media (max-width: 992px) {
   #boxed-wrapper header .fusion-header .fusion-row .logo-section {
     width: 100%;
-    justify-content: space-between;
   }
 }
 @media (max-width: 640px) {
   #boxed-wrapper header .fusion-header .fusion-row .logo-section {
-    flex-direction: column;
+    gap: 0;
   }
 }
 #boxed-wrapper header .fusion-header .fusion-row .logo-section .fusion-logo {
@@ -5414,6 +5408,24 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   #boxed-wrapper header .fusion-header .fusion-row .logo-section .socials a img {
     width: 35px;
     height: 35px;
+  }
+}
+#boxed-wrapper header .fusion-header .fusion-row .logo-section .socials .contact-button {
+  display: block;
+}
+@media (max-width: 640px) {
+  #boxed-wrapper header .fusion-header .fusion-row .logo-section .socials .contact-button {
+    display: none;
+  }
+}
+#boxed-wrapper header .fusion-header .fusion-row .logo-section .socials .contact-button a {
+  width: 100% !important;
+  height: 25px !important;
+  display: flex !important;
+}
+@media (min-width: 993px) {
+  #boxed-wrapper header .fusion-header .fusion-row .menu-section {
+    margin-top: 15px;
   }
 }
 #boxed-wrapper header .fusion-header .fusion-row .menu-section .opening-hours {
@@ -5720,6 +5732,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   z-index: 999999;
   transform: translateX(100%);
   transition: all 0.5s linear;
+}
+@media (max-width: 992px) {
+  #boxed-wrapper .side-menu {
+    top: 170px;
+  }
 }
 @media (max-width: 640px) {
   #boxed-wrapper .side-menu {

@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
 ?>
 <div class="fusion-header">
     <div class="fusion-row">
-        <div class="col-lg-7 col-md-6 col-12 p-0 logo-section">
+        <div class="col-lg-7 col-md-6 col-sm-6 col-12 p-0 logo-section">
             <?php avada_logo(); ?>
             <div class="socials">
                 <a href="<?php echo get_option('insusite_facebook') ?>" target="_blank">
@@ -28,9 +28,12 @@ if (!defined('ABSPATH')) {
                 <a href="<?php echo get_option('insusite_linkedin') ?>" target="_blank">
                     <img src="/wp-content/themes/Avada-Child/assets/images/icons/icon_linkedin.png">
                 </a>
+                <span class="contact-button">
+                    <a href="/contact" class="fusion-button brown-button"><span class="fusion-button-text">Contact</span></a>
+                </span>
             </div>
         </div>
-        <div class="col-lg-5 col-md-6 col-12 p-0 menu-section">
+        <div class="col-lg-5 col-md-6 col-sm-6 col-12 p-0 menu-section">
             <?php echo do_shortcode('[print_openings]'); ?>
         </div>
     </div>

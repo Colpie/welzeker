@@ -15,7 +15,7 @@
         flex-wrap: wrap;
 
         @media (max-width: 992px) {
-          flex-direction: column;
+          //flex-direction: column;
         }
 
         .logo-section {
@@ -24,12 +24,10 @@
 
           @media (max-width: 992px) {
             width: 100%;
-            justify-content: space-between;
           }
 
           @media (max-width: 640px) {
-            flex-direction: column;
-            //gap: 10px;
+            gap: 0;
           }
 
           .fusion-logo {
@@ -87,11 +85,29 @@
                 }
               }
             }
+
+            .contact-button {
+              display: block;
+
+              @media (max-width: 640px) {
+                display: none;
+              }
+
+              a {
+                width: 100% !important;
+                height: 25px !important;
+                display: flex !important;
+              }
+            }
           }
 
         }
 
         .menu-section {
+
+          @media (min-width: 993px) {
+            margin-top: 15px;
+          }
 
           .opening-hours {
             display: flex;
