@@ -276,47 +276,64 @@ if (!class_exists('Insufeed')) {
 		}
 
 		/* Rewrite insufeed cache companies */
-		if (is_file(INSUFEED_CACHE_DIR . '/companies.json')) {
-			print 'Rewrite insufeed cache companies' . PHP_EOL;
+        if (is_file(INSUFEED_CACHE_DIR . '/companies.json')) {
+            print 'Rewrite insufeed cache companies' . PHP_EOL;
 
-			$url = get_option('insufeed_url');
-			$headers = (get_headers($url));
-			$response_code = substr($headers[0], 9, 3);
-			if ($response_code == 301) {
-				$url = remove_http_from_url($url);
-				$url = 'https://' . $url;
-			}
+            $base_url = get_option('insufeed_url');
 
-			$url = $url . 'insu/companies';
-			$query = array();
-			$query['client_id'] = get_option('insufeed_public_key');
-			$query['secret'] = get_option('insufeed_private_key');
+            // Gebruik cURL in plaats van get_headers() om SSL-verificatieproblemen op te vangen
+            $ch = curl_init($base_url);
+            curl_setopt($ch, CURLOPT_NOBODY, true); // Alleen headers ophalen
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true); // Houd TRUE voor productie
+            curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+            $result = curl_exec($ch);
+            $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            $ssl_error = curl_error($ch);
+            curl_close($ch);
 
-			$query = http_build_query($query);
-			$url .= '?' . $query;
+            if ($http_code == 301) {
+                $base_url = remove_http_from_url($base_url);
+                $base_url = 'https://' . $base_url;
+            } elseif ($http_code === 0) {
+                error_log("⚠️ SSL fout bij ophalen headers van $base_url: $ssl_error");
+                return; // Stop verdere verwerking
+            }
 
-			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_HEADER, 0);
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-			curl_setopt($ch, CURLOPT_URL, $url);
+            // Voeg query toe
+            $url = $base_url . 'insu/companies';
+            $query = array(
+                'client_id' => get_option('insufeed_public_key'),
+                'secret' => get_option('insufeed_private_key'),
+            );
+            $url .= '?' . http_build_query($query);
 
-			if (ini_get('open_basedir') == '') {
-				curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
-			}
+            // Ophalen via cURL
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_HEADER, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true); // Voor productie
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_URL, $url);
 
-			curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
-			$contents = curl_exec($ch);
-			curl_close($ch);
+            if (ini_get('open_basedir') == '') {
+                curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+            }
 
-			if ($contents) {
-				$fh = fopen(INSUFEED_CACHE_DIR . '/companies.json', 'w+');
-				fwrite($fh, $contents);
-				fclose($fh);
-			}
-		}
+            curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
+            $contents = curl_exec($ch);
+            $fetch_error = curl_error($ch);
+            curl_close($ch);
 
-		/* WPFC cache clear after sync */
+            if ($contents) {
+                $fh = fopen(INSUFEED_CACHE_DIR . '/companies.json', 'w+');
+                fwrite($fh, $contents);
+                fclose($fh);
+            } else {
+                error_log("❌ Ophalen van bedrijven mislukt voor URL: $url - fout: $fetch_error");
+            }
+        }
+
+        /* WPFC cache clear after sync */
 		if (isset($GLOBALS['wp_fastest_cache']) && method_exists($GLOBALS['wp_fastest_cache'], 'deleteCache')) {
 			print 'Delete WPFC cache' . PHP_EOL;
 			$GLOBALS['wp_fastest_cache']->deleteCache(true);
