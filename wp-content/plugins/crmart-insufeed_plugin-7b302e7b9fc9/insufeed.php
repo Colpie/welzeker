@@ -161,9 +161,8 @@ if (!class_exists('Insufeed')) {
                 return file_get_contents(INSUFEED_CACHE_DIR . '/companies.json');
             }
 
-            if (strpos($method, 'acties') !== FALSE) {
-                $file = INSUFEED_CACHE_DIR . '/ ' . str_replace('/', '_', $method) . '.json';
-
+            if (strpos($method, 'acties') !== false) {
+                $file = INSUFEED_CACHE_DIR . '/' . str_replace('/', '_', $method) . '.json';
                 if (is_file($file) && filectime($file) > (time() - 24 * 60 * 60)) {
                     return file_get_contents($file);
                 }
@@ -173,68 +172,69 @@ if (!class_exists('Insufeed')) {
                 return file_get_contents(INSUFEED_CACHE_DIR . '/document_categories.json');
             }
 
-            $url = get_option('insufeed_url');
-            $headers = get_headers($url);
+            $base_url = get_option('insufeed_url');
 
-            // Handle cases where get_headers() returns false
-            if ($headers !== false) {
-                $response_code = substr($headers[0], 9, 3);
-                if ($response_code == 301) {
-                    $url = remove_http_from_url($url);
-                    $url = 'https://' . $url;
-                }
-            } else {
-                // Log the error and return false if headers couldn't be fetched
-                error_log("Failed to retrieve headers for URL: $url");
+            // Vervanging van get_headers() → veilige cURL-check
+            $ch = curl_init($base_url);
+            curl_setopt($ch, CURLOPT_NOBODY, true);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true); // TRUE in productie!
+            curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+            curl_exec($ch);
+            $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            $ssl_error = curl_error($ch);
+            curl_close($ch);
+
+            if ($http_code == 301) {
+                $base_url = remove_http_from_url($base_url);
+                $base_url = 'https://' . $base_url;
+            } elseif ($http_code === 0) {
+                error_log("⚠️ SSL fout bij ophalen headers van $base_url: $ssl_error");
                 return false;
             }
 
-            $url = $url . $method;
-            $query = array();
-            $query['client_id'] = get_option('insufeed_public_key');
-            $query['secret'] = get_option('insufeed_private_key');
-
-            $query = http_build_query($query);
-            $url .= '?' . $query;
+            $url = $base_url . $method;
+            $query = array(
+                'client_id' => get_option('insufeed_public_key'),
+                'secret'    => get_option('insufeed_private_key'),
+            );
+            $url .= '?' . http_build_query($query);
 
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_HEADER, 0);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true); // TRUE in productie
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_URL, $url);
 
             if (ini_get('open_basedir') == '') {
-                curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+                curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
             }
 
             curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
             $contents = curl_exec($ch);
+            $fetch_error = curl_error($ch);
             curl_close($ch);
 
             if ($contents) {
                 if ($method == 'insu/companies') {
-                    $fh = fopen(INSUFEED_CACHE_DIR . '/companies.json', 'w+');
-                    fwrite($fh, $contents);
-                    fclose($fh);
+                    file_put_contents(INSUFEED_CACHE_DIR . '/companies.json', $contents);
                 }
 
                 if ($method == 'insu/documentcategories') {
-                    $fh = fopen(INSUFEED_CACHE_DIR . '/document_categories.json', 'w+');
-                    fwrite($fh, $contents);
-                    fclose($fh);
+                    file_put_contents(INSUFEED_CACHE_DIR . '/document_categories.json', $contents);
                 }
 
-                if (strpos($method, 'acties') !== FALSE) {
-                    $file = INSUFEED_CACHE_DIR . '/ ' . str_replace('/', '_', $method) . '.json';
-                    $fh = fopen($file, 'w+');
-                    fwrite($fh, $contents);
-                    fclose($fh);
+                if (strpos($method, 'acties') !== false) {
+                    $file = INSUFEED_CACHE_DIR . '/' . str_replace('/', '_', $method) . '.json';
+                    file_put_contents($file, $contents);
                 }
 
                 return $contents;
+            } else {
+                error_log("❌ Ophalen van inhoud voor $method mislukt. Fout: $fetch_error");
             }
 
-            return FALSE;
+            return false;
         }
 
         public static function activate() {
