@@ -36,6 +36,7 @@ if (!class_exists('PostTypeInsufeed')) {
                 'rewrite' => array('slug' => 'nieuws'),
                 'public' => true,
                 'has_archive' => true,
+                'show_in_rest' => true,
                 'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
                 'menu_icon' => plugins_url('../images/insunews-icon.png', __FILE__),
             ));

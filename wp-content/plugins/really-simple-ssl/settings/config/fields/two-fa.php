@@ -4,15 +4,12 @@ defined( 'ABSPATH' ) or die();
 add_filter( 'rsssl_fields', function( $fields ) {
 	return array_merge( $fields,
 		[
-
 			[
 				'id'       => 'login_protection_enabled',
 				'menu_id'  => 'two-fa',
 				'group_id' => 'two_fa_general',
 				'type'     => 'checkbox',
 				'label'    => __( "Enable Two-Factor Authentication", "really-simple-ssl" ),
-				'disabled' => false,
-				'default'  => 'disabled',
 				'server_conditions'    => [
 					'relation' => 'AND',
 					[
@@ -77,12 +74,14 @@ add_filter( 'rsssl_fields', function( $fields ) {
 				'menu_id'  => 'two-fa',
 				'group_id' => 'two_fa_email',
 				'type'     => 'roles_enabled_dropdown',
+                'disabled' => (rsssl_is_email_verified() === false),
+                'disabledTooltipText' => __("This feature is disabled because you have not verified that e-mail is correctly configured on your site.", "really-simple-ssl"),
 				'default'  => [],
 				'label'    => __( 'Enable for:', 'really-simple-ssl' ),
 				'react_conditions' => [
 					'relation' => 'AND',
 					[
-						'login_protection_enabled' => 1
+						'login_protection_enabled' => 1,
 					]
 				],
 				'server_conditions'    => [
@@ -129,6 +128,7 @@ add_filter( 'rsssl_fields', function( $fields ) {
 						'is_multisite' => false,
 					]
 				],
+                'roles_filter' => true,
 				'columns' => [
 					[
 						'name'     => __( 'Username', 'really-simple-ssl' ),
@@ -136,30 +136,30 @@ add_filter( 'rsssl_fields', function( $fields ) {
 						'searchable' => true,
 						'visible' => true,
 						'column'   => 'user',
-						'width'    => '20%',
+						'width'    => '70%',
 					],
-					[
-						'name'     => __( 'User role', 'really-simple-ssl' ),
-						'sortable' => false,
-						'searchable' => false,
-						'visible' => true,
-						'column'   => 'user_role',
-						'width'    => '20%',
-					],
+//					[
+//						'name'     => __( 'User role', 'really-simple-ssl' ),
+//						'sortable' => false,
+//						'searchable' => false,
+//						'visible' => true,
+//						'column'   => 'user_role',
+//						'width'    => '20%',
+//					],
 					[
 						'name'     => __( 'Method', 'really-simple-ssl' ),
 						'sortable' => false,
 						'searchable' => true,
 						'visible' => true,
-						'width'     => '20%',
+						'width'     => '10%',
 						'column'   => 'rsssl_two_fa_providers',
 					],
 					[
 						'name'     => __( 'Status', 'really-simple-ssl' ),
-						'sortable' => false,
+						'sortable' => true,
 						'searchable' => false,
 						'visible' => true,
-						'width'     => '20%',
+						'width'     => '10%',
 						'column'   => 'status_for_user',
 					],
 					[
@@ -169,7 +169,6 @@ add_filter( 'rsssl_fields', function( $fields ) {
 						'visible' => true,
 						'column'   => 'resetControl',
 					],
-
 				],
 			],
 		]

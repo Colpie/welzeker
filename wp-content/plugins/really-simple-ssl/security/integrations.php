@@ -121,6 +121,9 @@ if ( ! function_exists('rsssl_is_integration_enabled') ) {
  */
 if ( ! function_exists('rsssl_integrations') ) {
 	function rsssl_integrations() {
+
+		$safe_mode        = defined( 'RSSSL_SAFE_MODE' ) && RSSSL_SAFE_MODE;
+
 		global $rsssl_integrations_list;
 		foreach ( $rsssl_integrations_list as $plugin => $details ) {
 			$details = wp_parse_args( $details,
@@ -141,7 +144,7 @@ if ( ! function_exists('rsssl_integrations') ) {
 				$path = apply_filters( 'rsssl_integrations_path', rsssl_path, $plugin, $details );
 
 				$file = $path . 'security/' . $details['folder'] . "/" . $plugin . '.php';
-				if ( ! file_exists( $file ) ) {
+				if ( ! file_exists( $file ) && $safe_mode ) {
 					continue;
 				}
 				require_once( $file );

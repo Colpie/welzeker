@@ -390,14 +390,14 @@
 				}
 			}
 
-			if(get_option('template') == "Divi"){
-				// Divi Theme - Static CSS File Generation
-				if($et_divi = get_option("et_divi")){
-					if(isset($et_divi["et_pb_static_css_file"]) && $et_divi["et_pb_static_css_file"] == "on"){
-						return array("You have to disable the <u><a target='_blank' href='https://www.wpfastestcache.com/tutorial/divi-theme-settings/'>Static CSS File Generation</a></u> option of Divi Theme", "error");
-					}
-				}
-			}
+			// if(get_option('template') == "Divi"){
+			// 	// Divi Theme - Static CSS File Generation
+			// 	if($et_divi = get_option("et_divi")){
+			// 		if(isset($et_divi["et_pb_static_css_file"]) && $et_divi["et_pb_static_css_file"] == "on"){
+			// 			return array("You have to disable the <u><a target='_blank' href='https://www.wpfastestcache.com/tutorial/divi-theme-settings/'>Static CSS File Generation</a></u> option of Divi Theme", "error");
+			// 		}
+			// 	}
+			// }
 
 			if($this->isPluginActive('elementor/elementor.php')){
 				// Elementor Plugin - Element Caching
@@ -808,6 +808,9 @@
 				$trailing_slash_rule = "RewriteCond %{REQUEST_URI} ![^\/]+\/$"."\n";
 			}
 
+			$query_string = "RewriteCond %{QUERY_STRING} !.+ [OR]"."\n".
+							"RewriteCond %{QUERY_STRING} fbclid="."\n";
+
 			$data = "# BEGIN WpFastestCache"."\n".
 					"# Modified Time: ".date("d-m-y G:i:s", current_time('timestamp'))."\n".
 					"<IfModule mod_rewrite.c>"."\n".
@@ -825,7 +828,8 @@
 					"RewriteCond %{REQUEST_URI} !(\/){2,}"."\n".
 					"RewriteCond %{THE_REQUEST} !(\/){2,}"."\n".
 					$trailing_slash_rule.
-					"RewriteCond %{QUERY_STRING} !.+"."\n".$loggedInUser.
+					$query_string.
+					$loggedInUser.
 					$consent_cookie.
 					"RewriteCond %{HTTP:Cookie} !comment_author_"."\n".
 					//"RewriteCond %{HTTP:Cookie} !woocommerce_items_in_cart"."\n".
@@ -1076,7 +1080,7 @@
 						$tabs = array();
 						
 						array_push($tabs, array("id"=>"wpfc-options","title" => __("Settings", "wp-fastest-cache" )));
-						array_push($tabs, array("id"=>"wpfc-deleteCache","title" => __("Delete Cache", "wp-fastest-cache" )));
+						array_push($tabs, array("id"=>"wpfc-deleteCache","title" => __("Clear Cache", "wp-fastest-cache" )));
 						array_push($tabs, array("id"=>"wpfc-imageOptimisation","title" => __("Image Optimization", "wp-fastest-cache" )));
 
 						if(!class_exists("WpFastestCachePowerfulHtml")){
@@ -1587,7 +1591,7 @@
 
 				   		<div class="exclude_section_clear" style=" margin-left: 3%; width: 95%; margin-bottom: 20px; margin-top: 0;"><div></div></div>
 
-				   		<h2 id="delete-cache-h2" style="padding-left:20px;padding-bottom:10px;"><?php _e("Delete Cache", "wp-fastest-cache"); ?></h2>
+				   		<h2 id="delete-cache-h2" style="padding-left:20px;padding-bottom:10px;"><?php _e("Clear Cache", "wp-fastest-cache"); ?></h2>
 
 				   		<?php //include_once(WPFC_MAIN_PATH."templates/cache_path.php"); ?>
 
@@ -1608,7 +1612,7 @@
 				   			<?php settings_fields( 'wpfc-group' ); ?>
 				    		<input type="hidden" value="deleteCssAndJsCache" name="wpFastestCachePage">
 				    		<div class="questionCon qsubmit left">
-				    			<div class="submit"><input type="submit" value="<?php _e("Delete Cache and Minified CSS/JS", "wp-fastest-cache"); ?>" class="button-primary"></div>
+				    			<div class="submit"><input type="submit" value="<?php _e("Clear Cache and Minified CSS/JS", "wp-fastest-cache"); ?>" class="button-primary"></div>
 				    		</div>
 				    		<div class="questionCon right">
 				    			<div style="padding-left:11px;">
@@ -2225,7 +2229,7 @@
 				    				</div>
 				    				<div class="app db">
 				    					<div style="font-weight:bold;font-size:14px;">ALL <span class="db-number">(0)</span></div>
-				    					<p>Run the all options</p>
+				    					<p>Clean all of them</p>
 				    				</div>
 				    				<div class="meta"></div>
 				    			</div>
@@ -2236,7 +2240,7 @@
 				    				</div>
 				    				<div class="app db">
 				    					<div style="font-weight:bold;font-size:14px;">Post Revisions <span class="db-number">(0)</span></div>
-				    					<p>Clean the all post revisions</p>
+				    					<p>Clean all post revisions</p>
 				    				</div>
 				    				<div class="meta"></div>
 				    			</div>
@@ -2247,7 +2251,7 @@
 				    				</div>
 				    				<div class="app db">
 				    					<div style="font-weight:bold;font-size:14px;">Trashed Contents <span class="db-number">(0)</span></div>
-				    					<p>Clean the all trashed posts & pages</p>
+				    					<p>Clean all trashed posts & pages</p>
 				    				</div>
 				    				<div class="meta"></div>
 				    			</div>
@@ -2258,7 +2262,7 @@
 				    				</div>
 				    				<div class="app db">
 				    					<div style="font-weight:bold;font-size:14px;">Trashed & Spam Comments <span class="db-number">(0)</span></div>
-				    					<p>Clean the all comments from trash & spam</p>
+				    					<p>Clean all comments from trash & spam</p>
 				    				</div>
 				    				<div class="meta"></div>
 				    			</div>
@@ -2269,7 +2273,7 @@
 				    				</div>
 				    				<div class="app db">
 				    					<div style="font-weight:bold;font-size:14px;">Trackbacks and Pingbacks <span class="db-number">(0)</span></div>
-				    					<p>Clean the all trackbacks and pingbacks</p>
+				    					<p>Clean all trackbacks and pingbacks</p>
 				    				</div>
 				    				<div class="meta"></div>
 				    			</div>
@@ -2280,7 +2284,7 @@
 				    				</div>
 				    				<div class="app db">
 				    					<div style="font-weight:bold;font-size:14px;">Transient Options <span class="db-number">(0)</span></div>
-				    					<p>Clean the all transient options</p>
+				    					<p>Clean all transient options</p>
 				    				</div>
 				    				<div class="meta"></div>
 				    			</div>
@@ -2371,15 +2375,30 @@
 					</style>
 				<div class="omni_admin_sidebar_section wpfc-sticky-notification" style="width: 100%;">
 		            <main role="main" class="">
-		                <div data-variant="7361" class="sticky-common-banner">
-		                    <div class="header">
-		                    	<img class="header-logo disable-lazy" src="<?php echo plugins_url("wp-fastest-cache/images/crown.png?v=1"); ?>" data-pin-no-hover="true" />
 
-		                        <h5 class="title">Make today the day you say goodbye to slowness.</h5>
-		                    </div>
-		                    <img class="visual disable-lazy" src="<?php echo plugins_url("wp-fastest-cache/images/price-mini-banner.jpg"); ?>" alt="Make today the day you say goodbye to slowness." data-pin-no-hover="true">
-		                    <a href="https://www.wpfastestcache.com/#buy" target="_blank" class="stickyFooterBannerCTA main-cta">Sign Up Now!</a>
-		                </div>
+
+
+		            	<?php if (get_locale() === 'tr_TR') { ?>
+		            		<a href="https://apps.apple.com/tr/app/i-ngilizce-kelimeler-%C3%B6%C4%9Fren/id1492827466?l=tr" target="_blank">
+		            			<img class="visual disable-lazy" src="<?php echo plugins_url("wp-fastest-cache/images/ads/" . rand(1, 6) . ".jpg"); ?>" alt="İngilizce Kelime Öğren!" data-pin-no-hover="true">
+		            		</a>
+		            	<?php }else{ ?>
+			                <div data-variant="7361" class="sticky-common-banner">
+			                    <div class="header">
+			                    	<img class="header-logo disable-lazy" src="<?php echo plugins_url("wp-fastest-cache/images/crown.png?v=1"); ?>" data-pin-no-hover="true" />
+
+			                        <h5 class="title">Make today the day you say goodbye to slowness.</h5>
+			                    </div>
+			                    <img class="visual disable-lazy" src="<?php echo plugins_url("wp-fastest-cache/images/price-mini-banner.jpg"); ?>" alt="Make today the day you say goodbye to slowness." data-pin-no-hover="true">
+			                    <a href="https://www.wpfastestcache.com/#buy" target="_blank" class="stickyFooterBannerCTA main-cta">Sign Up Now!</a>
+			                </div>
+		            	<?php } ?>
+
+
+
+
+
+
 		            </main>					
 				</div>
 				<?php } ?>
